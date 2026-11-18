@@ -33,15 +33,19 @@ void onDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
                   status == ESP_NOW_SEND_SUCCESS ? "SUCCESS (ACK Received) ✅" : "FAILED (No ACK) ❌");
 }
 
-// Hardware Reception Callback
+// Hardware Reception Callback (Compatible with Arduino Core v2 and v3)
+#if defined(ESP_ARDUINO_VERSION_MAJOR) && (ESP_ARDUINO_VERSION_MAJOR >= 3)
 void onDataRecv(const esp_now_recv_info_t *recv_info, const uint8_t *incomingData, int len) {
+    const uint8_t *mac_addr = recv_info->src_addr;
+#else
+void onDataRecv(const uint8_t *mac_addr, const uint8_t *incomingData, int len) {
+#endif
     if (len == sizeof(MeshPacket)) {
         memcpy(&rx_packet, incomingData, sizeof(MeshPacket));
         Serial.println("\n📥 [RX] Incoming ESP-NOW Packet Received!");
-        Serial.printf("  - From Node MAC:   %02X:%02X:%02X:%02X:%02X:%02X (RSSI: %d dBm)\n",
-                      recv_info->src_addr[0], recv_info->src_addr[1], recv_info->src_addr[2],
-                      recv_info->src_addr[3], recv_info->src_addr[4], recv_info->src_addr[5],
-                      recv_info->rx_ctrl->rssi);
+        Serial.printf("  - From Node MAC:   %02X:%02X:%02X:%02X:%02X:%02X\n",
+                      mac_addr[0], mac_addr[1], mac_addr[2],
+                      mac_addr[3], mac_addr[4], mac_addr[5]);
         Serial.printf("  - Msg ID:          #%u\n", rx_packet.message_id);
         Serial.printf("  - Node Temp:       %.2f °C\n", rx_packet.temperature);
         Serial.printf("  - Node Uptime:     %u sec\n", rx_packet.uptime_seconds);
