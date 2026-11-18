@@ -1,32 +1,56 @@
 # 🌟 Community Project & Build Showcase
 
-> **A curated visual gallery of outstanding hardware projects, 3D printed cyberdecks, smart home controllers, and robotics built by the global ESP32 Community.**
+> **A curated visual gallery of outstanding hardware projects, 3D printed enclosures, smart home controllers, and robotics built by the global ESP32 Community.**
 
 ---
 
 ## 📸 Featured Community Builds
 
-### 1. The Ultimate Off-Grid LoRa Communicator
-- **Creator**: Community Contributor / [@IamNotIntoTech](https://youtube.com/@IamNotIntoTech)
-- **Hardware**: ESP32-S3 + SX1262 LoRa module + 2.8" SPI Touch TFT + 18650 Li-ion
-- **Enclosure**: Custom ruggedized cyberdeck shell with screwless snap-latches designed by [@Makerrdesigns](https://youtube.com/@Makerrdesigns).
-- **Features**: Sub-GHz encrypted mesh messaging, GPS breadcrumb map, tactile rubber keypad.
-- **Project Link**: [`projects/advanced/17-lora-meshtastic-terminal/`](../projects/advanced/17-lora-meshtastic-terminal/)
+### 1. Dual-Core FreeRTOS Asymmetric Multiprocessing OS
+- **Creator**: Tushar Aggarwal / [@IamNotIntoTech](https://youtube.com/@IamNotIntoTech)
+- **Hardware**: ESP32 Classic Dual-Core (Xtensa LX6) + FreeRTOS
+- **Architecture**: Core 0 dedicated to real-time sensor sampling, Core 1 executing web UI & network communications via thread-safe queues.
+- **Project Link**: [`projects/advanced/24-freertos-dual-core-os/`](../projects/advanced/24-freertos-dual-core-os/)
 
-### 2. High-Precision Air Quality & CO2 Smart Station
-- **Hardware**: ESP32 Classic (WROOM-32) + Sensirion SCD40 + Plantower PMS5003 PM2.5 + SSD1306 OLED
-- **Firmware**: FreeRTOS multi-core sampling daemon, MQTT telemetry streaming to Home Assistant, local web dashboard.
-- **Project Link**: [`projects/advanced/11-air-quality-station/`](../projects/advanced/11-air-quality-station/)
+### 2. Standalone Wi-Fi Robot Car & 4-DOF Web Robotic Arm
+- **Hardware**: ESP32 + L298N Dual H-Bridge + 4x SG90/MG90S servos + Custom 3D Printed Chassis designed by [@Makerrdesigns](https://youtube.com/@Makerrdesigns).
+- **Features**: Standalone SoftAP web server, zero-latency touch D-Pad and angle sliders with software servo easing.
+- **Project Links**:
+  - [`projects/robotics/01-wifi-robot-car/`](../projects/robotics/01-wifi-robot-car/)
+  - [`projects/robotics/04-robotic-arm/`](../projects/robotics/04-robotic-arm/)
+  - [`projects/robotics/02-line-follower/`](../projects/robotics/02-line-follower/)
 
-### 3. ESP32-CAM Smart AI Bird Feeder
-- **Hardware**: AI-Thinker ESP32-CAM + PIR motion sensor + TP4056 solar charger
-- **Features**: Deep-sleep wake upon PIR trigger, automatic high-res capture, instant Telegram bot photo delivery with battery level indicator.
-- **Project Link**: [`projects/esp32-cam/08-bird-feeder-cam/`](../projects/esp32-cam/08-bird-feeder-cam/)
+### 3. ESP32-CAM High-Framerate Security Surveillance Camera
+- **Hardware**: AI-Thinker ESP32-CAM (OV2640 2MP sensor) + Onboard Flash LED
+- **Features**: Real-time MJPEG browser streaming, dynamic UX resolution/quality switching, motion detection trigger.
+- **Project Link**: [`projects/esp32-cam/01-security-camera/`](../projects/esp32-cam/01-security-camera/)
 
-### 4. Dual-Core FreeRTOS Picture-in-Picture Desktop OS
-- **Hardware**: ESP32-S3 with 8MB Octal PSRAM + 320x240 Capacitive Touch Screen
-- **Features**: Preemptive Core 0 background daemons, floating drag-and-drop PiP widgets, multi-app card task switcher.
-- **Project Link**: [`projects/advanced/01-esp32-os/`](../projects/advanced/01-esp32-os/)
+### 4. Decentralized Zero-Infrastructure ESP-NOW Sensor Mesh
+- **Hardware**: 2+ ESP32 boards communicating over peer-to-peer 2.4GHz raw radio frames.
+- **Features**: Broadcast telemetry without a central Wi-Fi router or access point, automated node discovery.
+- **Project Link**: [`projects/advanced/04-esp-now-mesh/`](../projects/advanced/04-esp-now-mesh/)
+
+### 5. Wi-Fi Deauthentication Detector & WiGLE Wardriver
+- **Hardware**: ESP32 DevKit in 802.11 Promiscuous Sniffer Mode
+- **Features**: Active detection of 0xC0 deauth and 0xA0 disassociation frames with LED alarm; automated 2.4GHz RF survey logging to WiGLE CSV format.
+- **Project Links**:
+  - [`projects/security/01-wifi-deauth-detector/`](../projects/security/01-wifi-deauth-detector/)
+  - [`projects/security/02-ble-scanner/`](../projects/security/02-ble-scanner/)
+  - [`projects/security/03-wardriver/`](../projects/security/03-wardriver/)
+
+### 6. Hi-Fi Bluetooth A2DP Wireless Speaker & Internet Radio
+- **Hardware**: ESP32 + MAX98357A I2S DAC amplifier + 3W 4Ω full-range speaker.
+- **Features**: Lossless 44.1 kHz 16-bit audio streaming from smartphones and worldwide MP3/AAC internet radio station playback.
+- **Project Links**:
+  - [`projects/audio/02-bluetooth-speaker/`](../projects/audio/02-bluetooth-speaker/)
+  - [`projects/intermediate/11-internet-radio/`](../projects/intermediate/11-internet-radio/)
+
+### 7. Retro OLED Arcade Suite (Pong & Snake with NVS High Score)
+- **Hardware**: ESP32 + 0.96" SSD1306 OLED (128x64) + dual tactile buttons + piezo buzzer.
+- **Features**: 60 FPS 2D physics engine, adaptive AI opponent paddle, and flash non-volatile memory score preservation.
+- **Project Links**:
+  - [`projects/games/01-pong/`](../projects/games/01-pong/)
+  - [`projects/games/02-snake/`](../projects/games/02-snake/)
 
 ---
 

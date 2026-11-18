@@ -244,23 +244,19 @@ projects/<category>/<project-name>/
 
 > *Perfect for absolute beginners. No prior ESP32 experience required. Each project introduces one or two new concepts.*
 
-| # | Project | Description | Difficulty | Link |
-|:-:|:--------|:------------|:----------:|:----:|
-| 1 | **Hello ESP32** | Your first sketch — serial output, board LED, basic I/O | ⭐ | [Open](projects/beginner/01-hello-esp32/) |
-| 2 | **Blink LED** | External LED blinking with GPIO control and timing | ⭐ | [Open](projects/beginner/02-blink-led/) |
-| 3 | **Button Input** | Digital input with debouncing, pull-up/pull-down resistors | ⭐ | [Open](projects/beginner/03-button-input/) |
-| 4 | **PWM LED Fade** | Smooth LED fading using PWM (LEDC) channels | ⭐ | [Open](projects/beginner/04-pwm-led-fade/) |
-| 5 | **Analog Read** | Reading analog sensors (potentiometer, LDR) with ADC | ⭐ | [Open](projects/beginner/05-analog-read/) |
-| 6 | **RGB LED Control** | Controlling an RGB LED — color mixing with PWM | ⭐ | [Open](projects/beginner/06-rgb-led/) |
-| 7 | **Servo Motor** | Controlling servo motors with PWM signals | ⭐⭐ | [Open](projects/beginner/07-servo-motor/) |
-| 8 | **Temperature Sensor** | Reading DHT11/DHT22 temperature & humidity sensors | ⭐⭐ | [Open](projects/beginner/08-temperature-sensor/) |
-| 9 | **OLED Display** | Displaying text and graphics on SSD1306 OLED (I2C) | ⭐⭐ | [Open](projects/beginner/09-oled-display/) |
-| 10 | **WiFi Scanner** | Scanning and listing nearby WiFi networks | ⭐⭐ | [Open](projects/beginner/10-wifi-scanner/) |
-| 11 | **Web Server Basic** | Simple web server to control an LED from your phone | ⭐⭐ | [Open](projects/beginner/11-web-server-basic/) |
-| 12 | **NeoPixel Strip** | Driving WS2812B addressable LED strips — rainbow effects | ⭐⭐ | [Open](projects/beginner/12-neopixel-strip/) |
-| 13 | **Ultrasonic Sensor** | Distance measurement with HC-SR04 ultrasonic sensor | ⭐⭐ | [Open](projects/beginner/13-ultrasonic-sensor/) |
-| 14 | **Buzzer Melodies** | Playing tunes and alerts with a passive buzzer | ⭐ | [Open](projects/beginner/14-buzzer-melodies/) |
-| 15 | **OTA Update Basic** | Your first over-the-air firmware update | ⭐⭐ | [Open](projects/beginner/15-ota-update-basic/) |
+| # | Project | Description | Difficulty | Status | Link |
+|:-:|:--------|:------------|:----------:|:------:|:----:|
+| 1 | **Hello ESP32** | Your first sketch — serial output, board LED, basic I/O | ⭐ | ✅ Ready | [Open](projects/beginner/01-hello-esp32/) |
+| 2 | **WiFi Scanner** | Scanning and listing nearby 2.4GHz WiFi networks & RSSI | ⭐ | ✅ Ready | [Open](projects/beginner/02-wifi-scanner/) |
+| 3 | **Blink RGB** | Multi-channel PWM (LEDC) smooth color cycling | ⭐ | ✅ Ready | [Open](projects/beginner/03-blink-rgb/) |
+| 4 | **Web Server Hello** | Lightweight HTTP server toggling onboard LED from smartphone | ⭐⭐ | ✅ Ready | [Open](projects/beginner/04-web-server-hello/) |
+| 5 | **NTP Clock** | Network time protocol clock synchronized over Wi-Fi | ⭐⭐ | ✅ Ready | [Open](projects/beginner/05-ntp-clock/) |
+| 6 | **Capacitive Touch** | Built-in capacitive touch-sensing pads & toggle triggers | ⭐ | ✅ Ready | [Open](projects/beginner/06-touch-buttons/) |
+| 7 | **BLE Beacon** | Bluetooth Low Energy iBeacon / Eddystone advertiser | ⭐⭐ | ✅ Ready | [Open](projects/beginner/07-ble-beacon/) |
+| 8 | **Debounced Button** | Multi-action tactile input (Single, Double, Long Press) | ⭐ | ✅ Ready | [Open](projects/beginner/08-button-led/) |
+| 9 | **Deep Sleep Timer** | Ultra-low power RTC timer wakeup for battery systems | ⭐⭐ | ✅ Ready | [Open](projects/beginner/09-deep-sleep-timer/) |
+| 10 | **Serial JSON API** | Bidirectional JSON-RPC command protocol over USB | ⭐⭐ | ✅ Ready | [Open](projects/beginner/10-serial-json-api/) |
+| 15 | **OTA Update Basic** | Over-the-air wireless firmware update via ArduinoOTA | ⭐⭐ | ✅ Ready | [Open](projects/beginner/15-ota-update-basic/) |
 
 ---
 
@@ -268,33 +264,33 @@ projects/<category>/<project-name>/
 
 > *Build real-world IoT projects. Requires basic ESP32 knowledge. Introduces WiFi communication, sensors, displays, and cloud connectivity.*
 
-| # | Project | Description | Difficulty | Link |
-|:-:|:--------|:------------|:----------:|:----:|
-| 1 | **Weather Station** | Multi-sensor weather station with OLED display & web dashboard | ⭐⭐⭐ | [Open](projects/intermediate/01-weather-station/) |
-| 2 | **MQTT Client** | Publish & subscribe to MQTT topics (Mosquitto, HiveMQ) | ⭐⭐⭐ | [Open](projects/intermediate/02-mqtt-client/) |
-| 3 | **Home Automation Hub** | Control relays, lights, fans via web interface | ⭐⭐⭐ | [Open](projects/intermediate/03-home-automation-hub/) |
-| 4 | **Bluetooth Speaker** | A2DP Bluetooth audio sink — stream from your phone | ⭐⭐⭐ | [Open](projects/intermediate/04-bluetooth-speaker/) |
-| 5 | **GPS Tracker** | Real-time GPS tracking with NEO-6M + web map display | ⭐⭐⭐ | [Open](projects/intermediate/05-gps-tracker/) |
-| 6 | **Touch Piano** | Capacitive touch piano using ESP32 touch pins | ⭐⭐⭐ | [Open](projects/intermediate/06-touch-piano/) |
-| 7 | **E-Paper Dashboard** | Low-power dashboard on e-ink display, updates hourly | ⭐⭐⭐ | [Open](projects/intermediate/07-epaper-dashboard/) |
-| 8 | **WiFi Doorbell** | Smart doorbell with push notifications (Telegram/NTFY) | ⭐⭐⭐ | [Open](projects/intermediate/08-wifi-doorbell/) |
-| 9 | **Data Logger** | SD card data logging with timestamps and CSV export | ⭐⭐⭐ | [Open](projects/intermediate/09-data-logger/) |
-| 10 | **BLE Remote Control** | BLE peripheral for controlling devices from a phone app | ⭐⭐⭐ | [Open](projects/intermediate/10-ble-remote/) |
-| 11 | **NTP Clock** | Network-synchronized clock on TFT/OLED display | ⭐⭐ | [Open](projects/intermediate/11-ntp-clock/) |
-| 12 | **Telegram Bot** | Control your ESP32 via Telegram commands | ⭐⭐⭐ | [Open](projects/intermediate/12-telegram-bot/) |
-| 13 | **Air Quality Monitor** | PM2.5/CO2/VOC monitoring with web dashboard | ⭐⭐⭐ | [Open](projects/intermediate/13-air-quality-monitor/) |
-| 14 | **Smart Plant Watering** | Soil moisture sensing + automated pump control | ⭐⭐⭐ | [Open](projects/intermediate/14-smart-plant-watering/) |
-| 15 | **LED Matrix Display** | 8×32 LED matrix with scrolling text and animations | ⭐⭐⭐ | [Open](projects/intermediate/15-led-matrix/) |
-| 16 | **Websocket Server** | Real-time bidirectional communication via WebSockets | ⭐⭐⭐ | [Open](projects/intermediate/16-websocket-server/) |
-| 17 | **IR Remote Clone** | Record and replay IR remote signals (TV, AC, etc.) | ⭐⭐⭐ | [Open](projects/intermediate/17-ir-remote-clone/) |
-| 18 | **Motion Detector** | PIR + radar motion detection with alerts | ⭐⭐ | [Open](projects/intermediate/18-motion-detector/) |
-| 19 | **CAN Bus Monitor** | Read OBD-II / CAN bus data from vehicles | ⭐⭐⭐⭐ | [Open](projects/intermediate/19-can-bus-monitor/) |
-| 20 | **ESP-NOW Chat** | Peer-to-peer text messaging without WiFi/internet | ⭐⭐⭐ | [Open](projects/intermediate/20-esp-now-chat/) |
-| 21 | **TFT Dashboard** | Multi-page dashboard on ILI9341 TFT display | ⭐⭐⭐ | [Open](projects/intermediate/21-tft-dashboard/) |
-| 22 | **Power Monitor** | CT clamp-based home power consumption monitor | ⭐⭐⭐ | [Open](projects/intermediate/22-power-monitor/) |
-| 23 | **WiFi Mesh Network** | painlessMesh multi-node communication | ⭐⭐⭐⭐ | [Open](projects/intermediate/23-wifi-mesh/) |
-| 24 | **Firebase Integration** | Real-time database sync with Google Firebase | ⭐⭐⭐ | [Open](projects/intermediate/24-firebase-integration/) |
-| 25 | **OTA Update Manager** | Advanced OTA with version checking, rollback, and dual partitions | ⭐⭐⭐⭐ | [Open](projects/intermediate/25-ota-update-manager/) |
+| # | Project | Description | Difficulty | Status | Link |
+|:-:|:--------|:------------|:----------:|:------:|:----:|
+| 1 | **Weather Station** | Multi-sensor station with OpenWeather API & OLED dashboard | ⭐⭐⭐ | ✅ Ready | [Open](projects/intermediate/01-weather-station/) |
+| 2 | **MQTT Dashboard** | Telemetry publisher & remote relay subscriber (JSON payload) | ⭐⭐⭐ | ✅ Ready | [Open](projects/intermediate/02-mqtt-dashboard/) |
+| 3 | **Crypto Tracker** | Live Bitcoin & Ethereum price ticker with CoinGecko SSL API | ⭐⭐⭐ | ✅ Ready | [Open](projects/intermediate/03-crypto-tracker/) |
+| 4 | **Bluetooth Speaker** | A2DP Bluetooth audio sink to I2S DAC (MAX98357A) | ⭐⭐⭐ | ✅ Ready | [Open](projects/audio/02-bluetooth-speaker/) |
+| 5 | **GPS Tracker** | Real-time GPS tracking with NEO-6M + web map display | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/05-gps-tracker/) |
+| 6 | **Touch Piano** | Capacitive touch piano using ESP32 touch pins | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/06-touch-piano/) |
+| 7 | **E-Paper Dashboard** | Low-power dashboard on e-ink display, updates hourly | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/07-epaper-dashboard/) |
+| 8 | **WiFi Doorbell** | Smart doorbell with push notifications (Telegram/NTFY) | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/08-wifi-doorbell/) |
+| 9 | **Data Logger** | SD card data logging with timestamps and CSV export | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/09-data-logger/) |
+| 10 | **BLE Remote Control** | BLE peripheral for controlling devices from a phone app | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/10-ble-remote/) |
+| 11 | **Internet Radio** | High-fidelity MP3/AAC internet streaming radio via I2S DAC | ⭐⭐⭐ | ✅ Ready | [Open](projects/intermediate/11-internet-radio/) |
+| 12 | **Telegram Bot** | Control your ESP32 via Telegram commands | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/12-telegram-bot/) |
+| 13 | **Air Quality Monitor** | PM2.5/CO2/VOC monitoring with web dashboard | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/13-air-quality-monitor/) |
+| 14 | **Smart Plant Watering** | Soil moisture sensing + automated pump control | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/14-smart-plant-watering/) |
+| 15 | **LED Matrix Display** | 8×32 LED matrix with scrolling text and animations | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/15-led-matrix/) |
+| 16 | **Pomodoro Timer** | Focus timer with OLED countdown, buzzer alarm & flash | ⭐⭐⭐ | ✅ Ready | [Open](projects/intermediate/16-pomodoro-timer/) |
+| 17 | **IR Remote Clone** | Record and replay IR remote signals (TV, AC, etc.) | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/17-ir-remote-clone/) |
+| 18 | **Motion Detector** | PIR + radar motion detection with alerts | ⭐⭐ | 📋 Planned | [Open](projects/intermediate/18-motion-detector/) |
+| 19 | **CAN Bus Monitor** | Read OBD-II / CAN bus data from vehicles | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/19-can-bus-monitor/) |
+| 20 | **ESP-NOW Mesh** | Decentralized multi-node peer-to-peer sensor mesh | ⭐⭐⭐ | ✅ Ready | [Open](projects/advanced/04-esp-now-mesh/) |
+| 21 | **TFT Dashboard** | Multi-page dashboard on ILI9341 TFT display | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/21-tft-dashboard/) |
+| 22 | **Power Monitor** | CT clamp-based home power consumption monitor | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/22-power-monitor/) |
+| 23 | **WiFi Mesh Network** | painlessMesh multi-node communication | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/23-wifi-mesh/) |
+| 24 | **Dual-Core FreeRTOS** | Asymmetric multiprocessing with queue-based IPC | ⭐⭐⭐⭐ | ✅ Ready | [Open](projects/advanced/24-freertos-dual-core-os/) |
+| 25 | **OTA Update Manager** | Advanced OTA with version checking, rollback, and dual partitions | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/25-ota-update-manager/) |
 
 ---
 
@@ -409,18 +405,18 @@ projects/<category>/<project-name>/
 
 > *Build robots powered by ESP32 — from simple WiFi cars to advanced autonomous systems.*
 
-| # | Project | Description | Difficulty | Link |
-|:-:|:--------|:------------|:----------:|:----:|
-| 1 | **WiFi Robot Car** | Web-controlled 4WD robot car with live camera | ⭐⭐⭐ | [Open](projects/robotics/01-wifi-robot-car/) |
-| 2 | **Line Follower** | PID-controlled line following robot | ⭐⭐⭐ | [Open](projects/robotics/02-line-follower/) |
-| 3 | **Obstacle Avoider** | Ultrasonic + IR obstacle avoidance robot | ⭐⭐⭐ | [Open](projects/robotics/03-obstacle-avoider/) |
-| 4 | **Robotic Arm** | 6-DOF robotic arm with inverse kinematics | ⭐⭐⭐⭐ | [Open](projects/robotics/04-robotic-arm/) |
-| 5 | **Self-Balancing Robot** | Two-wheel self-balancing robot with PID + IMU | ⭐⭐⭐⭐⭐ | [Open](projects/robotics/05-self-balancing/) |
-| 6 | **Hexapod Walker** | 18-servo hexapod walking robot | ⭐⭐⭐⭐⭐ | [Open](projects/robotics/06-hexapod/) |
-| 7 | **Drone Flight Controller** | Quadcopter flight controller with PID stabilization | ⭐⭐⭐⭐⭐ | [Open](projects/robotics/07-drone-controller/) |
-| 8 | **SLAM Robot** | Simultaneous localization and mapping robot | ⭐⭐⭐⭐⭐ | [Open](projects/robotics/08-slam-robot/) |
-| 9 | **Swarm Robots** | Multi-robot coordination using ESP-NOW | ⭐⭐⭐⭐⭐ | [Open](projects/robotics/09-swarm-robots/) |
-| 10 | **Sumo Bot** | Competition-ready sumo wrestling robot | ⭐⭐⭐⭐ | [Open](projects/robotics/10-sumo-bot/) |
+| # | Project | Description | Difficulty | Status | Link |
+|:-:|:--------|:------------|:----------:|:------:|:----:|
+| 1 | **WiFi Robot Car** | Standalone AP web-controlled D-Pad chassis with speed PWM | ⭐⭐⭐ | ✅ Ready | [Open](projects/robotics/01-wifi-robot-car/) |
+| 2 | **PID Line Follower** | 5-channel TCRT5000 optical array with 200Hz PID loop | ⭐⭐⭐ | ✅ Ready | [Open](projects/robotics/02-line-follower/) |
+| 3 | **Obstacle Avoider** | Ultrasonic + IR obstacle avoidance robot | ⭐⭐⭐ | 📋 Planned | [Open](projects/robotics/03-obstacle-avoider/) |
+| 4 | **4-DOF Robotic Arm** | Web slider interface with servo easing & pose memory | ⭐⭐⭐⭐ | ✅ Ready | [Open](projects/robotics/04-robotic-arm/) |
+| 5 | **Self-Balancing Robot** | Two-wheel self-balancing robot with PID + IMU | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/robotics/05-self-balancing/) |
+| 6 | **Hexapod Walker** | 18-servo hexapod walking robot | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/robotics/06-hexapod/) |
+| 7 | **Drone Flight Controller** | Quadcopter flight controller with PID stabilization | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/robotics/07-drone-controller/) |
+| 8 | **SLAM Robot** | Simultaneous localization and mapping robot | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/robotics/08-slam-robot/) |
+| 9 | **Swarm Robots** | Multi-robot coordination using ESP-NOW | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/robotics/09-swarm-robots/) |
+| 10 | **Sumo Bot** | Competition-ready sumo wrestling robot | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/robotics/10-sumo-bot/) |
 
 ---
 
@@ -431,18 +427,18 @@ projects/<category>/<project-name>/
 > [!WARNING]
 > **These projects are for educational and authorized security research only.** Using these tools against networks or systems without explicit permission is illegal. Always practice responsible disclosure.
 
-| # | Project | Description | Difficulty | Link |
-|:-:|:--------|:------------|:----------:|:----:|
-| 1 | **WiFi Deauth Detector** | Detect deauthentication attacks on your network | ⭐⭐⭐ | [Open](projects/security/01-wifi-deauth-detector/) |
-| 2 | **Packet Sniffer** | 802.11 packet capture and analysis tool | ⭐⭐⭐⭐ | [Open](projects/security/02-packet-sniffer/) |
-| 3 | **BLE Scanner** | Comprehensive BLE device scanner and enumerator | ⭐⭐⭐ | [Open](projects/security/03-ble-scanner/) |
-| 4 | **WiFi Probe Analyzer** | Analyze WiFi probe requests for device tracking awareness | ⭐⭐⭐⭐ | [Open](projects/security/04-probe-analyzer/) |
-| 5 | **Rogue AP Detector** | Detect rogue/evil twin access points | ⭐⭐⭐⭐ | [Open](projects/security/05-rogue-ap-detector/) |
-| 6 | **RFID Cloner** | RFID card read/write/emulate (Mifare Classic) | ⭐⭐⭐⭐ | [Open](projects/security/06-rfid-cloner/) |
-| 7 | **Hardware Keylogger** | USB HID keylogger for security auditing | ⭐⭐⭐⭐ | [Open](projects/security/07-keylogger/) |
-| 8 | **Bad USB** | ESP32-S3 USB HID attack platform (like Rubber Ducky) | ⭐⭐⭐⭐ | [Open](projects/security/08-bad-usb/) |
-| 9 | **Network Monitor** | Real-time network traffic monitoring and alerting | ⭐⭐⭐⭐ | [Open](projects/security/09-network-monitor/) |
-| 10 | **Evil Portal** | Captive portal for WiFi security awareness training | ⭐⭐⭐⭐⭐ | [Open](projects/security/10-evil-portal/) |
+| # | Project | Description | Difficulty | Status | Link |
+|:-:|:--------|:------------|:----------:|:------:|:----:|
+| 1 | **WiFi Deauth Detector** | Promiscuous 802.11 monitor detecting 0xC0 & 0xA0 attacks | ⭐⭐⭐ | ✅ Ready | [Open](projects/security/01-wifi-deauth-detector/) |
+| 2 | **BLE Tracker Scanner** | Proximity locator for Apple AirTags, FindMy & iBeacons | ⭐⭐⭐ | ✅ Ready | [Open](projects/security/02-ble-scanner/) |
+| 3 | **WiGLE Wardriver** | Continuous 2.4GHz survey logger exporting WiGLE CSV | ⭐⭐⭐ | ✅ Ready | [Open](projects/security/03-wardriver/) |
+| 4 | **WiFi Probe Analyzer** | Analyze WiFi probe requests for device tracking awareness | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/security/04-probe-analyzer/) |
+| 5 | **Rogue AP Detector** | Detect rogue/evil twin access points | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/security/05-rogue-ap-detector/) |
+| 6 | **RFID Cloner** | RFID card read/write/emulate (Mifare Classic) | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/security/06-rfid-cloner/) |
+| 7 | **Hardware Keylogger** | USB HID keylogger for security auditing | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/security/07-keylogger/) |
+| 8 | **Bad USB** | ESP32-S3 USB HID attack platform (like Rubber Ducky) | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/security/08-bad-usb/) |
+| 9 | **Network Monitor** | Real-time network traffic monitoring and alerting | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/security/09-network-monitor/) |
+| 10 | **Evil Portal** | Captive portal for WiFi security awareness training | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/security/10-evil-portal/) |
 
 ---
 
@@ -450,18 +446,18 @@ projects/<category>/<project-name>/
 
 > *ESP32 audio projects — from internet radio to real-time digital signal processing and MIDI controllers.*
 
-| # | Project | Description | Difficulty | Link |
-|:-:|:--------|:------------|:----------:|:----:|
-| 1 | **Internet Radio** | WiFi internet radio with station presets + display | ⭐⭐⭐ | [Open](projects/audio/01-internet-radio/) |
-| 2 | **MP3 Player** | SD card MP3 player with I2S DAC output | ⭐⭐⭐ | [Open](projects/audio/02-mp3-player/) |
-| 3 | **Bluetooth Speaker** | A2DP Bluetooth speaker with I2S amplifier | ⭐⭐⭐ | [Open](projects/audio/03-bluetooth-speaker/) |
-| 4 | **Voice Recorder** | Record audio to SD card with I2S MEMS microphone | ⭐⭐⭐ | [Open](projects/audio/04-voice-recorder/) |
-| 5 | **Audio Spectrum Analyzer** | Real-time FFT audio spectrum visualizer | ⭐⭐⭐⭐ | [Open](projects/audio/05-spectrum-analyzer/) |
-| 6 | **Walkie-Talkie** | Two-way audio communication over ESP-NOW/WiFi | ⭐⭐⭐⭐ | [Open](projects/audio/06-walkie-talkie/) |
-| 7 | **Synthesizer** | Digital audio synthesizer with waveform generation | ⭐⭐⭐⭐ | [Open](projects/audio/07-synthesizer/) |
-| 8 | **Guitar Effects Pedal** | Real-time guitar effects processor (distortion, delay, reverb) | ⭐⭐⭐⭐⭐ | [Open](projects/audio/08-guitar-effects/) |
-| 9 | **Text-to-Speech** | Offline TTS engine running on ESP32 | ⭐⭐⭐⭐ | [Open](projects/audio/09-text-to-speech/) |
-| 10 | **MIDI Controller** | USB/BLE MIDI controller with knobs, faders, pads | ⭐⭐⭐⭐ | [Open](projects/audio/10-midi-controller/) |
+| # | Project | Description | Difficulty | Status | Link |
+|:-:|:--------|:------------|:----------:|:------:|:----:|
+| 1 | **Internet Radio** | WiFi streaming MP3/AAC internet radio via I2S DAC | ⭐⭐⭐ | ✅ Ready | [Open](projects/intermediate/11-internet-radio/) |
+| 2 | **Bluetooth Speaker** | Lossless A2DP Bluetooth audio sink to MAX98357A I2S DAC | ⭐⭐⭐ | ✅ Ready | [Open](projects/audio/02-bluetooth-speaker/) |
+| 3 | **MP3 Player** | SD card MP3 player with I2S DAC output | ⭐⭐⭐ | 📋 Planned | [Open](projects/audio/03-mp3-player/) |
+| 4 | **Voice Recorder** | Record audio to SD card with I2S MEMS microphone | ⭐⭐⭐ | 📋 Planned | [Open](projects/audio/04-voice-recorder/) |
+| 5 | **Audio Spectrum Analyzer** | Real-time FFT audio spectrum visualizer | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/audio/05-spectrum-analyzer/) |
+| 6 | **Walkie-Talkie** | Two-way audio communication over ESP-NOW/WiFi | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/audio/06-walkie-talkie/) |
+| 7 | **Synthesizer** | Digital audio synthesizer with waveform generation | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/audio/07-synthesizer/) |
+| 8 | **Guitar Effects Pedal** | Real-time guitar effects processor (distortion, delay, reverb) | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/audio/08-guitar-effects/) |
+| 9 | **Text-to-Speech** | Offline TTS engine running on ESP32 | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/audio/09-text-to-speech/) |
+| 10 | **MIDI Controller** | USB/BLE MIDI controller with knobs, faders, pads | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/audio/10-midi-controller/) |
 
 ---
 
@@ -469,9 +465,10 @@ projects/<category>/<project-name>/
 
 > *Who said microcontrollers can't be fun? Classic games, emulators, and custom game engines on ESP32.*
 
-| # | Project | Description | Difficulty | Link |
-|:-:|:--------|:------------|:----------:|:----:|
-| 1 | **Pong** | Classic Pong game on OLED/TFT with buttons | ⭐⭐ | [Open](projects/games/01-pong/) |
+| # | Project | Description | Difficulty | Status | Link |
+|:-:|:--------|:------------|:----------:|:------:|:----:|
+| 1 | **Pong** | 60 FPS 2D Pong on SSD1306 OLED with AI opponent & buzzer | ⭐⭐ | ✅ Ready | [Open](projects/games/01-pong/) |
+| 2 | **Snake** | Nokia-style Snake on OLED with NVS flash persistent high score | ⭐⭐ | ✅ Ready | [Open](projects/games/02-snake/) |
 | 2 | **Snake** | Classic Snake game with high score tracking | ⭐⭐ | [Open](projects/games/02-snake/) |
 | 3 | **Tetris** | Full Tetris implementation with rotation, scoring | ⭐⭐⭐ | [Open](projects/games/03-tetris/) |
 | 4 | **Flappy Bird** | Flappy Bird clone on TFT display | ⭐⭐⭐ | [Open](projects/games/04-flappy-bird/) |
