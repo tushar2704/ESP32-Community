@@ -11,6 +11,11 @@
 #include <esp_now.h>
 #include <esp_mac.h>
 
+// Forward declaration for compatibility across Arduino core versions
+#if !defined(ESP_IDF_VERSION_MAJOR) || (ESP_IDF_VERSION_MAJOR < 5)
+struct esp_now_recv_info_t {};
+#endif
+
 // Global Broadcast Address (FF:FF:FF:FF:FF:FF sends to all listening ESP32s on same channel)
 uint8_t broadcastAddress[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 
