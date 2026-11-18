@@ -1,0 +1,46 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# PlatformIO
+.pio
+.pioenvs
+.piolibdeps
+
+# Arduino
+*.hex
+*.bin
+*.elf
+*.o
+*.a
+*.d
+
+# ESP-IDF
+build/
+sdkconfig.old
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# VS Code / IDEs
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Build artifacts & temp
+*.tmp
+*.log

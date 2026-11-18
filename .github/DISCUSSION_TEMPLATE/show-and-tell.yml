@@ -1,0 +1,117 @@
+# ⚡ ESP32 Community — Show and Tell Discussion Template
+# https://github.com/tushar2704/ESP32-Community
+
+title: "[SHOW] "
+labels:
+  - show-and-tell
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎉 Show and Tell
+        Share your ESP32 builds, creations, and experiments with the community!
+        We love seeing what you're making. Photos, videos, and demos are highly encouraged! 📸
+
+  - type: input
+    id: project-title
+    attributes:
+      label: Project / build title
+      description: Give your creation a name!
+      placeholder: "e.g. My Custom Weather Station with 3D Printed Enclosure"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: esp32-chip
+    attributes:
+      label: Which ESP32 chip did you use?
+      description: Select the chip(s) in your build
+      multiple: true
+      options:
+        - ESP32 (Classic)
+        - ESP32-S2
+        - ESP32-S3
+        - ESP32-C3
+        - ESP32-C5
+        - ESP32-C6
+        - ESP32-H2
+        - ESP32-P4
+        - ESP32-CAM
+    validations:
+      required: true
+
+  - type: dropdown
+    id: framework
+    attributes:
+      label: Development framework
+      description: What did you use to program it?
+      multiple: true
+      options:
+        - Arduino IDE
+        - PlatformIO
+        - ESP-IDF
+        - MicroPython
+        - CircuitPython
+        - ESPHome
+        - Tasmota
+        - Other
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Tell us about your build!
+      description: What does it do? What inspired you? What did you learn?
+      placeholder: "Describe your project, what it does, and why you built it..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: photos
+    attributes:
+      label: Photos / videos / demo
+      description: "Show off your work! Drag and drop images, paste links to videos, or share a live demo URL."
+      placeholder: "Drag & drop images here, or paste YouTube/video links..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: hardware-list
+    attributes:
+      label: Hardware & components used
+      description: List the parts in your build
+      placeholder: |
+        - ESP32-S3 DevKitC
+        - BME280 temperature/humidity sensor
+        - 1.3" OLED display
+        - Custom 3D printed case (PLA)
+
+  - type: textarea
+    id: challenges
+    attributes:
+      label: Challenges & lessons learned
+      description: What was tricky? What would you do differently next time?
+      placeholder: "Any challenges you faced, bugs you squashed, or tips for others trying something similar..."
+
+  - type: input
+    id: source-code
+    attributes:
+      label: Source code link (optional)
+      description: Link to your code — GitHub repo, gist, or PR in this repository
+      placeholder: "https://github.com/..."
+
+  - type: dropdown
+    id: based-on
+    attributes:
+      label: Based on an ESP32 Community project?
+      description: Did you build on top of one of our community projects?
+      options:
+        - "Yes — modified a community project"
+        - "Inspired by a community project"
+        - "No — independent build"
+        - "It's my own submission to the repo"
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Anything else?
+      description: Links to blog posts, 3D print files, schematics, or anything else you want to share

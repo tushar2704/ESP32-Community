@@ -1,0 +1,109 @@
+# ⚡ ESP32 Community — Project Ideas Discussion Template
+# https://github.com/tushar2704/ESP32-Community
+
+title: "[IDEA] "
+labels:
+  - project-idea
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 💡 Project Idea
+        Share your ESP32 project idea with the community! Great ideas may become official community projects.
+
+  - type: input
+    id: project-name
+    attributes:
+      label: Project name
+      description: A short, descriptive name for your project idea
+      placeholder: "e.g. ESP32-S3 AI Doorbell with Face Recognition"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which category best fits this idea?
+      options:
+        - 🟢 Beginner
+        - 🟡 Intermediate
+        - 🔴 Advanced
+        - 📷 ESP32-CAM
+        - 🏠 Smart Home
+        - 🤖 Robotics
+        - 🔒 Security
+        - 🎵 Audio
+        - 🎮 Games
+        - 🏭 Industrial
+        - ⌚ Wearables
+        - 🖥️ Displays
+        - 🧠 TinyML / AI
+        - 🌐 Networking / Mesh
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: target-chip
+    attributes:
+      label: Target ESP32 chip(s)
+      description: Which chip(s) would this project target?
+      multiple: true
+      options:
+        - ESP32 (Classic)
+        - ESP32-S2
+        - ESP32-S3
+        - ESP32-C3
+        - ESP32-C5
+        - ESP32-C6
+        - ESP32-H2
+        - ESP32-P4
+        - Any / Chip-agnostic
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the project idea
+      description: What would this project do? Why is it useful or interesting?
+      placeholder: "Describe what the project does, the problem it solves, and why the community would benefit from it..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Hardware / components needed
+      description: What sensors, displays, actuators, or other components would be required?
+      placeholder: |
+        - ESP32-S3 DevKitC
+        - OV2640 Camera module
+        - 2.8" TFT display
+        - Piezo buzzer
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / inspiration
+      description: Links to similar projects, tutorials, datasheets, or documentation that could help
+      placeholder: "Links, articles, videos, or existing projects for reference..."
+
+  - type: dropdown
+    id: volunteer
+    attributes:
+      label: Would you like to build this?
+      description: Are you volunteering to implement this project, or suggesting it for someone else?
+      options:
+        - "✋ I'd like to build it myself"
+        - "🤝 I'd collaborate with someone"
+        - "💬 Just suggesting — anyone can pick it up"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Anything else? Mockups, diagrams, related YouTube videos, etc.
