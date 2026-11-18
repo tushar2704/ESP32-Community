@@ -391,7 +391,7 @@ Serial.println(WiFi.localIP());
 | Resource | Link |
 |----------|------|
 | **Espressif Official Docs** | [docs.espressif.com](https://docs.espressif.com/) |
-| **ESP32 Arduino Core** | [github.com/espressif/arduino-esp32](https://github.com/espressif/arduino-esp32) |
+| **ESP32 Arduino Core** | [Espressif Arduino Documentation](https://docs.espressif.com/projects/arduino-esp32/) |
 | **Random Nerd Tutorials** | [randomnerdtutorials.com](https://randomnerdtutorials.com/) |
 | **ESP32 Datasheet** | [espressif.com/en/products/socs/esp32](https://www.espressif.com/en/products/socs/esp32) |
 | **PlatformIO ESP32** | [docs.platformio.org](https://docs.platformio.org/en/latest/boards/index.html#espressif-32) |

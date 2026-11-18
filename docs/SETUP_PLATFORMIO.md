@@ -261,8 +261,8 @@ lib_deps =
     ; Using specific version
     knolleary/PubSubClient@^2.8
 
-    ; Using GitHub URL
-    https://github.com/me-no-dev/ESPAsyncWebServer.git
+    ; Using Git URL
+    https://example.com/author/library.git
 
     ; Using local path
     ; symlink:///path/to/my/library

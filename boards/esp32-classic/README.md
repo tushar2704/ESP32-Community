@@ -127,7 +127,7 @@ void loop() {
 |---|---|
 | **Datasheet** | [ESP32 Datasheet (PDF)](https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf) |
 | **Technical Reference** | [ESP32 TRM](https://www.espressif.com/sites/default/files/documentation/esp32_technical_reference_manual_en.pdf) |
-| **Arduino Core** | [espressif/arduino-esp32](https://github.com/espressif/arduino-esp32) |
+| **Arduino Docs** | [Espressif Arduino Documentation](https://docs.espressif.com/projects/arduino-esp32/) |
 | **ESP-IDF Guide** | [ESP-IDF Programming Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/) |
 
 ---

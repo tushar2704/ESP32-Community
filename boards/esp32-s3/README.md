@@ -143,7 +143,7 @@ void loop() {
 |---|---|
 | **Datasheet** | [ESP32-S3 Datasheet (PDF)](https://www.espressif.com/sites/default/files/documentation/esp32-s3_datasheet_en.pdf) |
 | **Technical Reference** | [ESP32-S3 TRM](https://www.espressif.com/sites/default/files/documentation/esp32-s3_technical_reference_manual_en.pdf) |
-| **Arduino Core** | [espressif/arduino-esp32](https://github.com/espressif/arduino-esp32) |
+| **Arduino Docs** | [Espressif Arduino Documentation](https://docs.espressif.com/projects/arduino-esp32/) |
 | **ESP-IDF Guide** | [ESP-IDF for ESP32-S3](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/) |
 
 ---

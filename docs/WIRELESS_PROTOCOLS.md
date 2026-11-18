@@ -408,7 +408,7 @@ Matter is the **unified smart home standard** backed by Apple, Google, Amazon, a
 #include <esp_matter_core.h>
 
 // Full example requires esp-matter component from Espressif
-// See: https://github.com/espressif/esp-matter
+// Configured via ESP-IDF components directory
 ```
 
 The typical workflow:
@@ -451,10 +451,8 @@ The typical workflow:
 | ESP-IDF WiFi Docs | [docs.espressif.com](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/network/esp_wifi.html) |
 | ESP-IDF BLE Docs | [docs.espressif.com](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/bluetooth/index.html) |
 | ESP-NOW Docs | [docs.espressif.com](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/network/esp_now.html) |
-| ESP-Matter SDK | [github.com/espressif/esp-matter](https://github.com/espressif/esp-matter) |
-| ESP-Zigbee SDK | [github.com/espressif/esp-zigbee-sdk](https://github.com/espressif/esp-zigbee-sdk) |
-| OpenThread on ESP | [github.com/espressif/esp-idf (openthread)](https://github.com/espressif/openthread) |
-| painlessMesh Library | [github.com/gmag11/painlessMesh](https://github.com/gmag11/painlessMesh) |
+| Espressif Matter Solution | [docs.espressif.com](https://docs.espressif.com/projects/esp-matter/en/latest/) |
+| Espressif Zigbee SDK Docs | [docs.espressif.com](https://docs.espressif.com/projects/esp-zigbee-sdk/en/latest/) |
 
 ---
 

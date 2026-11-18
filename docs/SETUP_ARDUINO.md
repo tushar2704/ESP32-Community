@@ -248,7 +248,6 @@ Quick reference for the most common boards in the Arduino IDE board selector:
 | Resource | Link |
 |---|---|
 | ESP32 Arduino Core Docs | [https://docs.espressif.com/projects/arduino-esp32/](https://docs.espressif.com/projects/arduino-esp32/) |
-| Arduino-ESP32 GitHub | [https://github.com/espressif/arduino-esp32](https://github.com/espressif/arduino-esp32) |
 | Arduino Reference | [https://www.arduino.cc/reference/en/](https://www.arduino.cc/reference/en/) |
 | ESP32 Pinout Reference | [../boards/esp32-classic/README.md](../boards/esp32-classic/README.md) |
 | PlatformIO Setup (Alternative) | [SETUP_PLATFORMIO.md](SETUP_PLATFORMIO.md) |

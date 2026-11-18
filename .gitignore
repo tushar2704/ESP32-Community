@@ -44,3 +44,9 @@ ENV/
 # Build artifacts & temp
 *.tmp
 *.log
+
+# Private developer instructions
+MASTER_INSTRUCTIONS.md
+master instruction.md
+master-instructions.md
+*.instruction.md

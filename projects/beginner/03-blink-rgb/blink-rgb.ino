@@ -23,10 +23,21 @@
 #define PWM_FREQ 5000
 #define PWM_RES  8
 
+// PWM Channels (for Core v2)
+#define CH_RED   0
+#define CH_GREEN 1
+#define CH_BLUE  2
+
 void setRGB(uint8_t r, uint8_t g, uint8_t b) {
+#if defined(ESP_ARDUINO_VERSION_MAJOR) && (ESP_ARDUINO_VERSION_MAJOR >= 3)
     ledcWrite(PIN_RED, r);
     ledcWrite(PIN_GREEN, g);
     ledcWrite(PIN_BLUE, b);
+#else
+    ledcWrite(CH_RED, r);
+    ledcWrite(CH_GREEN, g);
+    ledcWrite(CH_BLUE, b);
+#endif
 }
 
 // Convert HSV color space (0-359 hue) to RGB
@@ -62,10 +73,19 @@ void setup() {
     Serial.printf("Pins Configured: Red: %d | Green: %d | Blue: %d\n", PIN_RED, PIN_GREEN, PIN_BLUE);
     Serial.println("Commands available via Serial: Type 'R<0-255> G<0-255> B<0-255>' or let the rainbow run!");
 
-    // Modern Arduino ESP32 v3 LEDC setup
+    // Compatible LEDC setup for both Arduino Core v2 and v3
+#if defined(ESP_ARDUINO_VERSION_MAJOR) && (ESP_ARDUINO_VERSION_MAJOR >= 3)
     ledcAttach(PIN_RED, PWM_FREQ, PWM_RES);
     ledcAttach(PIN_GREEN, PWM_FREQ, PWM_RES);
     ledcAttach(PIN_BLUE, PWM_FREQ, PWM_RES);
+#else
+    ledcSetup(CH_RED, PWM_FREQ, PWM_RES);
+    ledcAttachPin(PIN_RED, CH_RED);
+    ledcSetup(CH_GREEN, PWM_FREQ, PWM_RES);
+    ledcAttachPin(PIN_GREEN, CH_GREEN);
+    ledcSetup(CH_BLUE, PWM_FREQ, PWM_RES);
+    ledcAttachPin(PIN_BLUE, CH_BLUE);
+#endif
 }
 
 void loop() {

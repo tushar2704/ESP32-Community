@@ -514,9 +514,8 @@ idf.py add-dependency <component>  # Add IDF component registry dep
 | Resource | Link |
 |---|---|
 | ESP-IDF Programming Guide | [https://docs.espressif.com/projects/esp-idf/](https://docs.espressif.com/projects/esp-idf/) |
-| ESP-IDF GitHub | [https://github.com/espressif/esp-idf](https://github.com/espressif/esp-idf) |
 | IDF Component Registry | [https://components.espressif.com/](https://components.espressif.com/) |
-| ESP-IDF Examples | [https://github.com/espressif/esp-idf/tree/master/examples](https://github.com/espressif/esp-idf/tree/master/examples) |
+| Official API Reference | [https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/) |
 | Arduino IDE Setup (Beginner) | [SETUP_ARDUINO.md](SETUP_ARDUINO.md) |
 | PlatformIO Setup (Alternative) | [SETUP_PLATFORMIO.md](SETUP_PLATFORMIO.md) |
 | MicroPython Setup | [SETUP_MICROPYTHON.md](SETUP_MICROPYTHON.md) |

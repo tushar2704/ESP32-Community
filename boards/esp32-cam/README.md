@@ -217,8 +217,7 @@ void loop() { delay(10000); }
 |---|---|
 | **ESP32 Datasheet** | [ESP32 Datasheet (PDF)](https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf) |
 | **OV2640 Datasheet** | [OV2640 (PDF)](https://www.uctronics.com/download/cam_module/OV2640DS.pdf) |
-| **AI-Thinker Docs** | [ESP32-CAM Schematic](https://github.com/raphaelbs/esp32-cam-ai-thinker) |
-| **Arduino Camera Example** | [CameraWebServer](https://github.com/espressif/arduino-esp32/tree/master/libraries/ESP32/examples/Camera/CameraWebServer) |
+| **Community Camera Project** | [Security Camera](../../projects/esp32-cam/01-security-camera/) |
 
 ---
 

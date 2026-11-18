@@ -136,9 +136,8 @@ void loop() {
 |---|---|
 | **Datasheet** | [ESP32-C6 Datasheet (PDF)](https://www.espressif.com/sites/default/files/documentation/esp32-c6_datasheet_en.pdf) |
 | **Technical Reference** | [ESP32-C6 TRM](https://www.espressif.com/sites/default/files/documentation/esp32-c6_technical_reference_manual_en.pdf) |
-| **Arduino Core** | [espressif/arduino-esp32](https://github.com/espressif/arduino-esp32) |
 | **ESP-IDF Guide** | [ESP-IDF for ESP32-C6](https://docs.espressif.com/projects/esp-idf/en/latest/esp32c6/) |
-| **Thread/Matter** | [ESP Thread BR](https://github.com/espressif/esp-thread-br) |
+| **Thread & Matter Docs** | [Espressif Thread Solution](https://docs.espressif.com/projects/esp-thread-br/en/latest/) |
 
 ---
 

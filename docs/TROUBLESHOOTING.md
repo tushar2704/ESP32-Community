@@ -502,10 +502,8 @@ gen_esp32part.py ptable.bin
 |---|---|
 | ESP32 Datasheet | [espressif.com](https://www.espressif.com/en/support/documents/technical-documents) |
 | ESP-IDF Error Handling | [docs.espressif.com](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/esp_err.html) |
-| ESP Exception Decoder | [Arduino IDE Plugin](https://github.com/me-no-dev/EspExceptionDecoder) |
 | esptool.py Documentation | [docs.espressif.com](https://docs.espressif.com/projects/esptool/en/latest/) |
-| Arduino-ESP32 Issues | [github.com/espressif/arduino-esp32](https://github.com/espressif/arduino-esp32/issues) |
-| Random Nerd Tutorials | [randomnerdtutorials.com](https://randomnerdtutorials.com/) |
+| Espressif Technical Support | [espressif.com/en/contact-us](https://www.espressif.com/en/contact-us) |
 
 ---
 
