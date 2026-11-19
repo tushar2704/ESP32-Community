@@ -67,6 +67,38 @@
   - [`projects/advanced/08-usb-hid/`](../projects/advanced/08-usb-hid/)
   - [`projects/beginner/11-wifi-signal-mapper/`](../projects/beginner/11-wifi-signal-mapper/)
 
+### 10. Smart Plant Watering & Water Leak Prevention Suite
+- **Hardware**: ESP32 + Capacitive Soil Moisture Sensor v1.2 + 5V Submersible Relay Pump + Multi-zone Rain/Conductivity Water Sensors + Solenoid Valve.
+- **Features**: Automatic soil moisture threshold pump actuation with dry-run safety lockouts; sub-second multi-probe water leak sensing with audible alarm, emergency shutoff solenoid, and web dashboard telemetry.
+- **Project Links**:
+  - [`projects/intermediate/14-smart-plant-watering/`](../projects/intermediate/14-smart-plant-watering/)
+  - [`projects/smart-home/13-water-leak-detector/`](../projects/smart-home/13-water-leak-detector/)
+
+### 11. MicroSD High-Speed Telemetry Logger & PN532 NFC Access System
+- **Hardware**: ESP32 + SPI MicroSD Module + PN532 NFC RFID Reader/Writer + Status LEDs.
+- **Features**: High-frequency buffered CSV sensor logging with fail-safe file sync; MIFARE Classic and Ultralight NFC UID authorization database with NDEF message parsing.
+- **Project Links**:
+  - [`projects/intermediate/09-data-logger/`](../projects/intermediate/09-data-logger/)
+  - [`projects/advanced/31-nfc-reader/`](../projects/advanced/31-nfc-reader/)
+
+### 12. ESP32-CAM Time-Lapse & Native ESPHome Integration
+- **Hardware**: AI-Thinker ESP32-CAM + MicroSD card + ESP32 DevKit with DHT22 & Relay.
+- **Features**: Interval-based JPEG image capture with auto-incrementing file indexing directly to FAT32 SD card; plug-and-play Home Assistant auto-discovery via ESPHome native API.
+- **Project Links**:
+  - [`projects/esp32-cam/04-time-lapse/`](../projects/esp32-cam/04-time-lapse/)
+  - [`projects/smart-home/01-esphome-basics/`](../projects/smart-home/01-esphome-basics/)
+
+---
+
+## 🎮 Interactive Wokwi Browser Simulations
+
+No hardware on hand? You can simulate select community projects directly in your browser with zero setup:
+- **Hello ESP32**: [Simulate in Wokwi](https://wokwi.com/) with serial console and status LED.
+- **Blink RGB**: [Simulate in Wokwi](https://wokwi.com/) with multi-channel LEDC smooth color cycling.
+- **Retro Pong**: [Simulate in Wokwi](https://wokwi.com/) with dual-button controls and 60 FPS SSD1306 OLED display.
+
+Each simulated project includes `diagram.json` and `wokwi.toml` pre-configured in its project folder.
+
 ---
 
 ## 🎨 Submit Your Build to the Showcase

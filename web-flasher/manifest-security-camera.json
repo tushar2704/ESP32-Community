@@ -1,0 +1,29 @@
+{
+  "name": "ESP32-CAM MJPEG Video Streamer",
+  "version": "1.0.0",
+  "home_assistant_domain": "esphome",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "firmware/security-camera/esp32cam/bootloader.bin",
+          "offset": 4096
+        },
+        {
+          "path": "firmware/security-camera/esp32cam/partitions.bin",
+          "offset": 32768
+        },
+        {
+          "path": "firmware/boot_app0.bin",
+          "offset": 57344
+        },
+        {
+          "path": "firmware/security-camera/esp32cam/firmware.bin",
+          "offset": 65536
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "802.11 Deauthentication Packet Detector",
+  "version": "1.0.0",
+  "home_assistant_domain": "esphome",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "firmware/wifi-deauth-detector/esp32dev/bootloader.bin",
+          "offset": 4096
+        },
+        {
+          "path": "firmware/wifi-deauth-detector/esp32dev/partitions.bin",
+          "offset": 32768
+        },
+        {
+          "path": "firmware/boot_app0.bin",
+          "offset": 57344
+        },
+        {
+          "path": "firmware/wifi-deauth-detector/esp32dev/firmware.bin",
+          "offset": 65536
+        }
+      ]
+    }
+  ]
+}

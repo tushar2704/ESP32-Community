@@ -84,11 +84,17 @@
 > [!TIP]
 > **No Arduino IDE. No PlatformIO. No drivers. Just click and flash.**
 >
-> Our browser-based Web Flasher lets you program your ESP32 directly from Chrome/Edge — no software installation needed. Connect your board via USB, pick a project, and hit **Flash**. That's it.
+> Our browser-based Web Flasher lets you program your ESP32 directly from Chrome/Edge — no software installation needed. Connect your board via USB, pick from our curated collection of 12 flagship firmwares, inspect wiring schematics, and hit **Install**. Monitor runtime logs live with the integrated **Web Serial Monitor** directly in your browser.
 >
 > ### **👉 [Launch Web Flasher](https://tushar2704.github.io/ESP32-Community/) 👈**
 >
-> *Works with ESP32, ESP32-S2, ESP32-S3, ESP32-C3, ESP32-C6 • Requires Chrome 89+ or Edge 89+ • Uses Web Serial API*
+> *Works with ESP32, ESP32-S2, ESP32-S3, ESP32-C3, ESP32-C6 • Requires Chrome 89+ or Edge 89+ • Powered by Web Serial API & ESP Web Tools v10*
+
+### 🎮 Interactive Browser Simulations (Wokwi)
+Want to test without plugging in hardware? Simulate select projects directly in your browser:
+- 🟢 **[Hello ESP32](projects/beginner/01-hello-esp32/)** — Serial logging & LED blinking
+- 🌈 **[Blink RGB](projects/beginner/03-blink-rgb/)** — Multi-channel LEDC PWM color cycling
+- 🏓 **[Retro Pong](projects/games/01-pong/)** — 60 FPS SSD1306 OLED game with paddle buttons
 
 ---
 
@@ -275,12 +281,12 @@ projects/<category>/<project-name>/
 | 6 | **Touch Piano** | Capacitive touch piano using ESP32 touch pins | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/06-touch-piano/) |
 | 7 | **E-Paper Dashboard** | Low-power dashboard on e-ink display, updates hourly | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/07-epaper-dashboard/) |
 | 8 | **WiFi Doorbell** | Smart doorbell with push notifications (Telegram/NTFY) | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/08-wifi-doorbell/) |
-| 9 | **Data Logger** | SD card data logging with timestamps and CSV export | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/09-data-logger/) |
+| 9 | **Data Logger** | MicroSD SPI telemetry logging with buffered CSV & RTC sync | ⭐⭐⭐ | ✅ Ready | [Open](projects/intermediate/09-data-logger/) |
 | 10 | **BLE Remote Control** | BLE peripheral for controlling devices from a phone app | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/10-ble-remote/) |
 | 11 | **Internet Radio** | High-fidelity MP3/AAC internet streaming radio via I2S DAC | ⭐⭐⭐ | ✅ Ready | [Open](projects/intermediate/11-internet-radio/) |
 | 12 | **Telegram Bot** | Control your ESP32 via Telegram commands | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/12-telegram-bot/) |
 | 13 | **Air Quality Monitor** | PM2.5/CO2/VOC monitoring with web dashboard | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/13-air-quality-monitor/) |
-| 14 | **Smart Plant Watering** | Soil moisture sensing + automated pump control | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/14-smart-plant-watering/) |
+| 14 | **Smart Plant Watering** | Capacitive soil moisture sensing + automated pump control | ⭐⭐⭐ | ✅ Ready | [Open](projects/intermediate/14-smart-plant-watering/) |
 | 15 | **LED Matrix Display** | 8×32 LED matrix with scrolling text and animations | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/15-led-matrix/) |
 | 16 | **Pomodoro Timer** | Focus timer with OLED countdown, buzzer alarm & flash | ⭐⭐⭐ | ✅ Ready | [Open](projects/intermediate/16-pomodoro-timer/) |
 | 17 | **IR Remote Clone** | Record and replay IR remote signals (TV, AC, etc.) | ⭐⭐⭐ | 📋 Planned | [Open](projects/intermediate/17-ir-remote-clone/) |
@@ -330,9 +336,9 @@ projects/<category>/<project-name>/
 | 27 | **SDR Receiver** | Software-defined radio receiver with ESP32 | ⭐⭐⭐⭐⭐ | [Open](projects/advanced/27-sdr-receiver/) |
 | 28 | **Multi-Camera System** | Synchronized multi-camera capture with ESP32-S3 | ⭐⭐⭐⭐⭐ | [Open](projects/advanced/28-multi-camera/) |
 | 29 | **Custom Display Driver** | Write a display driver from scratch (SPI/I2C/parallel) | ⭐⭐⭐⭐ | [Open](projects/advanced/29-display-driver/) |
-| 30 | **Blockchain Node** | Lightweight blockchain node on ESP32 | ⭐⭐⭐⭐⭐ | [Open](projects/advanced/30-blockchain-node/) |
-| 31 | **NFC Reader/Writer** | PN532/RC522 NFC with NDEF message handling | ⭐⭐⭐⭐ | [Open](projects/advanced/31-nfc-reader/) |
-| 32 | **EtherCAT Slave** | Industrial EtherCAT slave node implementation | ⭐⭐⭐⭐⭐ | [Open](projects/advanced/32-ethercat-slave/) |
+| 30 | **Blockchain Node** | Lightweight blockchain node on ESP32 | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/advanced/30-blockchain-node/) |
+| 31 | **NFC Reader/Writer** | PN532/RC522 NFC with NDEF message handling & access control | ⭐⭐⭐⭐ | ✅ Ready | [Open](projects/advanced/31-nfc-reader/) |
+| 32 | **EtherCAT Slave** | Industrial EtherCAT slave node implementation | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/advanced/32-ethercat-slave/) |
 | 33 | **Custom USB Stack** | USB device stack from scratch on ESP32-S3 | ⭐⭐⭐⭐⭐ | [Open](projects/advanced/33-custom-usb-stack/) |
 | 34 | **Real-Time Video** | MJPEG/H.264 video streaming with low latency | ⭐⭐⭐⭐⭐ | [Open](projects/advanced/34-realtime-video/) |
 | 35 | **UWB Positioning** | Ultra-wideband indoor positioning system | ⭐⭐⭐⭐⭐ | [Open](projects/advanced/35-uwb-positioning/) |
@@ -358,12 +364,12 @@ projects/<category>/<project-name>/
 
 > *Everything you can do with the $5 ESP32-CAM module — from security cameras to AI-powered recognition.*
 
-| # | Project | Description | Difficulty | Link |
-|:-:|:--------|:------------|:----------:|:----:|
-| 1 | **Security Camera** | MJPEG streaming IP camera with motion detection | ⭐⭐⭐ | [Open](projects/esp32-cam/01-security-camera/) |
-| 2 | **Face Detection** | Real-time face detection using built-in MTMNN model | ⭐⭐⭐ | [Open](projects/esp32-cam/02-face-detection/) |
-| 3 | **Face Recognition** | Face enrollment and recognition with access control | ⭐⭐⭐⭐ | [Open](projects/esp32-cam/03-face-recognition/) |
-| 4 | **Time-Lapse Camera** | Automated time-lapse photography with SD card storage | ⭐⭐⭐ | [Open](projects/esp32-cam/04-time-lapse/) |
+| # | Project | Description | Difficulty | Status | Link |
+|:-:|:--------|:------------|:----------:|:------:|:----:|
+| 1 | **Security Camera** | MJPEG streaming IP camera with motion detection | ⭐⭐⭐ | ✅ Ready | [Open](projects/esp32-cam/01-security-camera/) |
+| 2 | **Face Detection** | Real-time face detection using built-in MTMNN model | ⭐⭐⭐ | 📋 Planned | [Open](projects/esp32-cam/02-face-detection/) |
+| 3 | **Face Recognition** | Face enrollment and recognition with access control | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/esp32-cam/03-face-recognition/) |
+| 4 | **Time-Lapse Camera** | Automated interval photography with SD storage & RTC sync | ⭐⭐⭐ | ✅ Ready | [Open](projects/esp32-cam/04-time-lapse/) |
 | 5 | **QR Code Reader** | Real-time QR/barcode scanning and decoding | ⭐⭐⭐ | [Open](projects/esp32-cam/05-qr-code-reader/) |
 | 6 | **Pet Feeder Camera** | Automated pet feeder with live camera feed | ⭐⭐⭐⭐ | [Open](projects/esp32-cam/06-pet-feeder-camera/) |
 | 7 | **License Plate Reader** | ANPR/ALPR license plate recognition system | ⭐⭐⭐⭐⭐ | [Open](projects/esp32-cam/07-license-plate-reader/) |
@@ -384,7 +390,7 @@ projects/<category>/<project-name>/
 
 | # | Project | Description | Difficulty | Status | Link |
 |:-:|:--------|:------------|:----------:|:------:|:----:|
-| 1 | **ESPHome Basics** | Your first ESPHome device — sensor + relay | ⭐⭐ | 📋 Planned | [Open](projects/smart-home/01-esphome-basics/) |
+| 1 | **ESPHome Basics** | Dual-sensor telemetry & relay with native Home Assistant integration | ⭐⭐ | ✅ Ready | [Open](projects/smart-home/01-esphome-basics/) |
 | 2 | **Smart Thermostat** | PID-controlled thermostat with scheduling | ⭐⭐⭐ | 📋 Planned | [Open](projects/smart-home/02-smart-thermostat/) |
 | 3 | **Garage Door Controller** | WiFi garage door opener with reed sensor, auto-close safety & web dashboard | ⭐⭐⭐ | ✅ Ready | [Open](projects/smart-home/03-garage-door/) |
 | 4 | **Smart Blinds** | Motorized window blind controller with scheduling | ⭐⭐⭐ | 📋 Planned | [Open](projects/smart-home/04-smart-blinds/) |
@@ -396,7 +402,7 @@ projects/<category>/<project-name>/
 | 10 | **Air Purifier Controller** | Smart air purifier with PM2.5 auto-triggering | ⭐⭐⭐ | [Open](projects/smart-home/10-air-purifier/) |
 | 11 | **Smart Mailbox** | Mailbox notification system with camera | ⭐⭐⭐ | [Open](projects/smart-home/11-smart-mailbox/) |
 | 12 | **Multi-Room Audio** | Snapcast-based synchronized multi-room audio | ⭐⭐⭐⭐ | [Open](projects/smart-home/12-multi-room-audio/) |
-| 13 | **Water Leak Detector** | Multi-zone water leak detection with auto shutoff | ⭐⭐⭐ | [Open](projects/smart-home/13-water-leak-detector/) |
+| 13 | **Water Leak Detector** | Multi-zone leak detection with solenoid emergency cutoff & web alert | ⭐⭐⭐ | ✅ Ready | [Open](projects/smart-home/13-water-leak-detector/) |
 | 14 | **Smart Mirror** | Magic mirror with display, sensors, and voice | ⭐⭐⭐⭐ | [Open](projects/smart-home/14-smart-mirror/) |
 | 15 | **Voice-Activated Lights** | Offline voice control for smart lights (no cloud) | ⭐⭐⭐⭐⭐ | [Open](projects/smart-home/15-voice-activated-lights/) |
 

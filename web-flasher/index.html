@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>⚡ ESP32 Community Web Flasher — 1-Click In-Browser Firmware Installer</title>
+  <title>⚡ ESP32 Community Web Flasher — 1-Click Browser Firmware Installer</title>
   <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
   <style>
     :root {
@@ -12,6 +12,7 @@
       --border: #1e293b;
       --accent: #38bdf8;
       --accent-hover: #0284c7;
+      --green: #22c55e;
       --text: #f8fafc;
       --text-muted: #94a3b8;
     }
@@ -24,59 +25,76 @@
       padding: 40px 20px;
     }
     .container {
-      max-width: 800px;
+      max-width: 860px;
       margin: 0 auto;
     }
     header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 36px;
     }
     .badge {
       display: inline-block;
       background: rgba(56, 189, 248, 0.1);
       color: var(--accent);
-      padding: 6px 14px;
+      padding: 6px 16px;
       border-radius: 9999px;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 16px;
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.25);
     }
     h1 {
-      font-size: 36px;
+      font-size: 38px;
       font-weight: 800;
       letter-spacing: -0.5px;
       margin-bottom: 12px;
-      background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     p.subtitle {
       color: var(--text-muted);
       font-size: 17px;
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto;
     }
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 32px;
+      padding: 28px;
       margin-bottom: 24px;
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
     }
     .card-title {
       font-size: 20px;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 16px;
       display: flex;
       align-items: center;
       gap: 10px;
     }
-    .card-desc {
-      color: var(--text-muted);
-      font-size: 14px;
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
       margin-bottom: 20px;
+    }
+    .pill {
+      background: #0b1322;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .pill:hover, .pill.active {
+      background: var(--accent);
+      color: #090d16;
+      border-color: var(--accent);
     }
     .selector-group {
       margin-bottom: 24px;
@@ -93,8 +111,8 @@
       background: #0b1322;
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 12px 16px;
-      border-radius: 8px;
+      padding: 14px 16px;
+      border-radius: 10px;
       font-size: 15px;
       outline: none;
       transition: border-color 0.2s;
@@ -102,90 +120,383 @@
     select:focus {
       border-color: var(--accent);
     }
+    .project-preview {
+      background: #0b1322;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .preview-title { font-size: 16px; font-weight: 700; color: #fff; }
+    .preview-tag {
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--green);
+    }
+    .preview-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5; }
+    .pinout-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 8px;
+      font-size: 13px;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #1e293b;
+    }
+    .pin-item { color: #cbd5e1; }
+    .pin-item strong { color: var(--accent); }
     .flash-container {
       display: flex;
       justify-content: center;
-      padding: 20px 0;
+      padding: 10px 0 20px 0;
     }
     esp-web-install-button {
-      --esp-tools-button-border-radius: 8px;
+      --esp-tools-button-border-radius: 10px;
       --esp-tools-button-color: #ffffff;
       --esp-tools-button-text-color: #090d16;
     }
+    .btn-flash {
+      background: var(--accent);
+      color: #090d16;
+      font-weight: 800;
+      font-size: 17px;
+      padding: 16px 36px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.1s, opacity 0.2s;
+    }
+    .btn-flash:hover { opacity: 0.95; }
+    .btn-flash:active { transform: scale(0.98); }
+    .terminal-container {
+      margin-top: 20px;
+      background: #05080f;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .terminal-header {
+      background: #0f172a;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .btn-serial {
+      background: #334155;
+      color: #f8fafc;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-serial:hover { background: #475569; }
+    pre#serial-output {
+      height: 180px;
+      padding: 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      color: #38bdf8;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
     .info-box {
-      background: rgba(30, 41, 59, 0.5);
+      background: rgba(30, 41, 59, 0.4);
       border-left: 4px solid var(--accent);
       padding: 16px;
-      border-radius: 0 8px 8px 0;
-      font-size: 13px;
+      border-radius: 0 10px 10px 0;
+      font-size: 13.5px;
       color: var(--text-muted);
       margin-top: 24px;
     }
     footer {
       text-align: center;
-      margin-top: 60px;
+      margin-top: 50px;
       color: var(--text-muted);
       font-size: 14px;
     }
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+    footer a { color: var(--accent); text-decoration: none; font-weight: 600; }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="badge">⚡ Zero-Install Web Flasher</div>
+      <div class="badge">⚡ Zero-Install Web Serial Flasher</div>
       <h1>Flash Your ESP32 in 1-Click</h1>
-      <p class="subtitle">Directly from Google Chrome, Edge, or Opera over Web Serial. Zero compilers, Python scripts, or driver headaches.</p>
+      <p class="subtitle">Directly from Google Chrome, Brave, Edge, or Opera over Web Serial. Zero compilers, Python scripts, or driver headaches.</p>
     </header>
 
     <div class="card">
-      <div class="card-title">📦 Choose Firmware Build</div>
-      <div class="card-desc">Select a project from the ESP32 Community catalog to install onto your connected device:</div>
+      <div class="card-title">📦 1. Choose Project Firmware</div>
 
-      <div class="selector-group">
-        <label for="project-select">Project</label>
-        <select id="project-select">
-          <option value="manifest-hello.json">🟢 Project 01: Hello ESP32 Hardware Diagnostic</option>
-          <option value="manifest-wifi.json">🟢 Project 02: 2.4 GHz Wi-Fi Spectrum Scanner</option>
-          <option value="manifest-web.json">🟢 Project 04: Embedded Web Server & IoT Hub</option>
-          <option value="manifest-cam.json">📷 Project CAM-01: ESP32-CAM MJPEG Security Streamer</option>
-          <option value="manifest-espnow.json">🔴 Project ADV-04: ESP-NOW Peer-to-Peer Mesh</option>
-        </select>
+      <div class="filter-pills" id="filters">
+        <button class="pill active" data-cat="all">All Projects (12)</button>
+        <button class="pill" data-cat="Beginner">🟢 Beginner</button>
+        <button class="pill" data-cat="Games">🎮 Retro Games</button>
+        <button class="pill" data-cat="Security">🔒 Security & RF</button>
+        <button class="pill" data-cat="Smart Home">🏠 Smart Home</button>
+        <button class="pill" data-cat="Camera">📷 ESP32-CAM</button>
       </div>
 
+      <div class="selector-group">
+        <label for="project-select">Select Firmware Build</label>
+        <select id="project-select"></select>
+      </div>
+
+      <div class="project-preview" id="preview-box">
+        <div class="preview-header">
+          <span class="preview-title" id="proj-name">Loading...</span>
+          <span class="preview-tag" id="proj-board">ESP32 DevKit</span>
+        </div>
+        <p class="preview-desc" id="proj-desc"></p>
+        <div class="pinout-list" id="proj-pins"></div>
+      </div>
+
+      <div class="card-title">⚡ 2. Connect & Flash Device</div>
       <div class="flash-container">
-        <esp-web-install-button id="install-btn" manifest="manifest-hello.json">
-          <button slot="activate" style="background:#38bdf8; color:#090d16; font-weight:700; font-size:16px; padding:14px 28px; border:none; border-radius:8px; cursor:pointer;">
-            ⚡ Connect & Flash Device
+        <esp-web-install-button id="install-btn" manifest="manifest-hello-esp32.json">
+          <button slot="activate" class="btn-flash">
+            ⚡ CONNECT & FLASH FIRMWARE
           </button>
-          <span slot="unsupported">⚠️ Web Serial is not supported by your browser. Please use Google Chrome, Brave, Edge, or Opera.</span>
+          <span slot="unsupported">⚠️ Web Serial is not supported by your browser. Please open in Google Chrome, Brave, Edge, or Opera.</span>
         </esp-web-install-button>
       </div>
 
+      <div class="terminal-container">
+        <div class="terminal-header">
+          <span>📟 Web Serial Monitor (115200 Baud)</span>
+          <button class="btn-serial" id="serial-btn" onclick="toggleSerial()">Connect Serial Console</button>
+        </div>
+        <pre id="serial-output">Click 'Connect Serial Console' to inspect live device logs...</pre>
+      </div>
+
       <div class="info-box">
-        💡 <strong>Quick Instructions:</strong> Connect your ESP32 to your computer using a USB data cable, click the blue button above, select your COM/Serial port from the browser prompt, and hit Install. If flashing fails, press and hold the <code>BOOT</code> button on your board until the progress bar begins.
+        💡 <strong>Quick Instructions:</strong> Connect your ESP32 to your PC using a reliable USB data cable. Click the blue button above, choose your serial port, and hit Install. If the device fails to enter bootloader mode, press and hold the physical <code>BOOT</code> button on your board while clicking Connect.
       </div>
     </div>
 
     <footer>
       <p>Built with ❤️ for the global maker community by <a href="https://github.com/tushar2704">Tushar Aggarwal (@tushar2704)</a></p>
       <p style="margin-top: 8px;">
-        <a href="https://youtube.com/@IamNotIntoTech">IamNotIntoTech</a> &bull; 
-        <a href="https://youtube.com/@Makerrdesigns">Makerrdesigns</a> &bull; 
-        <a href="https://github.com/tushar2704/ESP32-Community">GitHub Repository</a>
+        <a href="https://youtube.com/@IamNotIntoTech" target="_blank">IamNotIntoTech</a> &bull; 
+        <a href="https://youtube.com/@Makerrdesigns" target="_blank">Makerrdesigns</a> &bull; 
+        <a href="https://github.com/tushar2704/ESP32-Community" target="_blank">GitHub Repository</a>
       </p>
     </footer>
   </div>
 
   <script>
+    const CATALOG = [
+      {
+        manifest: "manifest-hello-esp32.json",
+        name: "01. Hello ESP32 Hardware Diagnostics",
+        category: "Beginner",
+        board: "ESP32 / S3 / C3",
+        desc: "Diagnostic firmware testing CPU clocks, flash size, PSRAM presence, on-chip temperature, and LED blink heartbeat.",
+        pins: ["Status LED: GPIO 2", "Serial Monitor: 115200 Baud"]
+      },
+      {
+        manifest: "manifest-wifi-scanner.json",
+        name: "02. 2.4 GHz Wi-Fi Spectrum Scanner",
+        category: "Beginner",
+        board: "ESP32 / S3 / C3",
+        desc: "Continuous wireless network auditor listing nearby SSIDs, RSSI dBm signal strength, encryption type, and MAC addresses.",
+        pins: ["Status LED: GPIO 2", "Antenna: On-board 2.4GHz"]
+      },
+      {
+        manifest: "manifest-blink-rgb.json",
+        name: "03. Smooth PWM Multi-Channel RGB Fader",
+        category: "Beginner",
+        board: "ESP32 / S3 / C3",
+        desc: "Hardware LEDC timer PWM fader smoothly animating 16.7M colors with gamma correction.",
+        pins: ["Red: GPIO 25", "Green: GPIO 26", "Blue: GPIO 27"]
+      },
+      {
+        manifest: "manifest-web-server-hello.json",
+        name: "04. Embedded Web Server & IoT Switch",
+        category: "Beginner",
+        board: "ESP32 / S3 / C3",
+        desc: "Standalone Wi-Fi Access Point and Station server hosting a responsive UI with toggle switches and REST endpoints.",
+        pins: ["Relay/LED: GPIO 2", "AP IP: 192.168.4.1"]
+      },
+      {
+        manifest: "manifest-wifi-signal-mapper.json",
+        name: "11. Pocket WiFi Signal Mapper & Analyzer",
+        category: "Beginner",
+        board: "ESP32 / S3 / C3",
+        desc: "OLED spectrum analyzer displaying AP channel congestion histograms, optimal channel advice, and Geiger acoustic beeper.",
+        pins: ["OLED SDA: GPIO 21", "OLED SCL: GPIO 22", "Buzzer: GPIO 25"]
+      },
+      {
+        manifest: "manifest-pong.json",
+        name: "01. Retro 60 FPS OLED Arcade Pong",
+        category: "Games",
+        board: "ESP32",
+        desc: "Smooth 60 FPS physics game on SSD1306 OLED with adaptive AI paddle, dual buttons, and sound effects.",
+        pins: ["OLED SDA: GPIO 21", "OLED SCL: GPIO 22", "Up: GPIO 18", "Down: GPIO 19", "Audio: GPIO 25"]
+      },
+      {
+        manifest: "manifest-snake.json",
+        name: "02. Nokia-Style OLED Snake with NVS Memory",
+        category: "Games",
+        board: "ESP32",
+        desc: "Classic Snake arcade with 4-way direction buttons, piezo chiptune audio, and persistent flash high scores.",
+        pins: ["OLED SDA: GPIO 21", "OLED SCL: GPIO 22", "Buttons: GPIO 18/19/23/5"]
+      },
+      {
+        manifest: "manifest-wifi-deauth-detector.json",
+        name: "01. 802.11 Deauth Attack Detector",
+        category: "Security",
+        board: "ESP32",
+        desc: "Promiscuous mode Wi-Fi sniffer detecting rogue 0xC0 deauthentication and 0xA0 disassociation frames with alarm.",
+        pins: ["Alarm LED: GPIO 2", "Buzzer: GPIO 25", "Promiscuous Sniffer"]
+      },
+      {
+        manifest: "manifest-wardriver.json",
+        name: "03. Continuous 2.4 GHz WiGLE Wardriver",
+        category: "Security",
+        board: "ESP32",
+        desc: "High-speed 2.4GHz network surveyor capturing BSSIDs and signal strengths, exporting to standard WiGLE CSV format.",
+        pins: ["Status LED: GPIO 2", "Serial Stream: 115200 Baud"]
+      },
+      {
+        manifest: "manifest-led-strip-controller.json",
+        name: "09. Addressable WS2812B NeoPixel Web Driver",
+        category: "Smart Home",
+        board: "ESP32 / S3 / C3",
+        desc: "Web-controlled RGB LED strip driver featuring 16.7M color picker, speed/brightness sliders, and 8 animation modes.",
+        pins: ["Data Out: GPIO 18", "Power: External 5V PSU"]
+      },
+      {
+        manifest: "manifest-garage-door.json",
+        name: "03. Smart Garage Door Opener & Reed Monitor",
+        category: "Smart Home",
+        board: "ESP32 / S3 / C3",
+        desc: "Animated roll-up door web dashboard with magnetic reed sensor tracking, relay pulse trigger, and auto-close timer.",
+        pins: ["Relay Pulse: GPIO 26", "Reed Switch: GPIO 27", "Buzzer: GPIO 25"]
+      },
+      {
+        manifest: "manifest-security-camera.json",
+        name: "CAM-01. ESP32-CAM MJPEG Video Streamer",
+        category: "Camera",
+        board: "ESP32-CAM",
+        desc: "High-framerate video surveillance camera streaming live MJPEG over Wi-Fi with resolution switcher.",
+        pins: ["Sensor: OV2640 2MP", "Flash LED: GPIO 4"]
+      }
+    ];
+
     const select = document.getElementById('project-select');
     const installBtn = document.getElementById('install-btn');
-    select.addEventListener('change', () => {
-      installBtn.setAttribute('manifest', select.value);
+    const filterContainer = document.getElementById('filters');
+
+    function renderOptions(category = 'all') {
+      select.innerHTML = '';
+      const filtered = (category === 'all') ? CATALOG : CATALOG.filter(p => p.category === category);
+      filtered.forEach((p, idx) => {
+        const opt = document.createElement('option');
+        opt.value = p.manifest;
+        opt.textContent = `[${p.category}] ${p.name}`;
+        select.appendChild(opt);
+      });
+      if (filtered.length > 0) {
+        select.value = filtered[0].manifest;
+        updatePreview(filtered[0].manifest);
+      }
+    }
+
+    function updatePreview(manifestFile) {
+      const p = CATALOG.find(item => item.manifest === manifestFile);
+      if (!p) return;
+      document.getElementById('proj-name').innerText = p.name;
+      document.getElementById('proj-board').innerText = p.board;
+      document.getElementById('proj-desc').innerText = p.desc;
+      
+      const pinContainer = document.getElementById('proj-pins');
+      pinContainer.innerHTML = '';
+      p.pins.forEach(pin => {
+        const div = document.createElement('div');
+        div.className = 'pin-item';
+        div.innerHTML = `📌 ${pin}`;
+        pinContainer.appendChild(div);
+      });
+      installBtn.setAttribute('manifest', p.manifest);
+    }
+
+    select.addEventListener('change', () => updatePreview(select.value));
+
+    filterContainer.addEventListener('click', (e) => {
+      if (e.target.classList.contains('pill')) {
+        document.querySelectorAll('.pill').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        renderOptions(e.target.dataset.cat);
+      }
     });
+
+    // --- Web Serial Terminal ---
+    let port = null;
+    let reader = null;
+    let keepReading = false;
+
+    async function toggleSerial() {
+      const output = document.getElementById('serial-output');
+      const btn = document.getElementById('serial-btn');
+
+      if (port) {
+        keepReading = false;
+        if (reader) await reader.cancel();
+        await port.close();
+        port = null;
+        btn.innerText = 'Connect Serial Console';
+        output.textContent += '\n[Disconnected from Serial Port]\n';
+        return;
+      }
+
+      if (!('serial' in navigator)) {
+        alert('Web Serial is not supported by your browser. Please use Chrome, Brave, or Edge.');
+        return;
+      }
+
+      try {
+        port = await navigator.serial.requestPort();
+        await port.open({ baudRate: 115200 });
+        btn.innerText = 'Disconnect Console';
+        output.textContent = '[Connected at 115200 baud]\n';
+        keepReading = true;
+
+        const decoder = new TextDecoderStream();
+        const readableStreamClosed = port.readable.pipeTo(decoder.writable);
+        reader = decoder.readable.getReader();
+
+        while (keepReading) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          if (value) {
+            output.textContent += value;
+            output.scrollTop = output.scrollHeight;
+          }
+        }
+      } catch (err) {
+        output.textContent += `\nError: ${err.message}\n`;
+      }
+    }
+
+    // Initialize catalog
+    renderOptions('all');
   </script>
 </body>
 </html>

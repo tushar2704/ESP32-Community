@@ -14,6 +14,7 @@
 # Arduino
 *.hex
 *.bin
+!web-flasher/**/*.bin
 *.elf
 *.o
 *.a

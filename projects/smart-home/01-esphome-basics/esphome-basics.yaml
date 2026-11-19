@@ -1,0 +1,60 @@
+# ESP32-Community: Flagship ESPHome Native Device Template
+# Compatible with Home Assistant Native API & Zero-Config Auto-Discovery
+
+esphome:
+  name: esp32-community-node
+  friendly_name: "ESP32 Community Smart Node"
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable Home Assistant Native API (Zero-Lag RPC)
+api:
+  encryption:
+    key: "YOUR_32_BYTE_BASE64_ENCRYPTION_KEY="
+
+# Over-The-Air Wireless Firmware Updates
+ota:
+  - platform: esphome
+
+# Wi-Fi Connectivity & Fallback Captive Portal Hotspot
+wifi:
+  ssid: "YOUR_WIFI_SSID"
+  password: "YOUR_WIFI_PASSWORD"
+
+  # Launches emergency configuration AP if home router is unavailable
+  ap:
+    ssid: "ESP32-Community-Fallback"
+    password: "fallbackpassword"
+
+captive_portal:
+
+# Built-in Hardware Diagnostics & Web Server
+web_server:
+  port: 80
+
+# On-board Status LED
+status_led:
+  pin: GPIO2
+
+# Relays / Controllable Switches
+switch:
+  - platform: gpio
+    name: "Living Room Relay"
+    pin: GPIO26
+    id: relay_1
+    icon: "mdi:power-socket-us"
+
+  - platform: restart
+    name: "Restart Node"
+
+# Sensors & Telemetry
+sensor:
+  - platform: wifi_signal
+    name: "Wi-Fi Signal Strength"
+    update_interval: 60s
+
+  - platform: uptime
+    name: "Uptime"
