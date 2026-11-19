@@ -14,6 +14,7 @@
  */
 
 #include <Arduino.h>
+#include <FS.h>
 #include "USB.h"
 #include "USBHIDKeyboard.h"
 #include "USBHIDConsumerControl.h"
