@@ -10,11 +10,6 @@
 #include <SPIFFS.h>
 #include <LittleFS.h>
 
-#if __has_include(<driver/temperature_sensor.h>)
-#include <driver/temperature_sensor.h>
-#define HAS_TEMP_SENSOR 1
-#endif
-
 ESP32_Easy_Class ESP32_Easy;
 
 void ESP32_Easy_Class::begin() {
@@ -88,23 +83,11 @@ uint32_t ESP32_Easy_Class::getFreeHeap() {
 }
 
 float ESP32_Easy_Class::getTemperature() {
-#if defined(HAS_TEMP_SENSOR)
-    static temperature_sensor_handle_t temp_sensor = NULL;
-    if (temp_sensor == NULL) {
-        temperature_sensor_config_t temp_sensor_config = TEMPERATURE_SENSOR_CONFIG_DEFAULT(10, 50);
-        if (temperature_sensor_install(&temp_sensor_config, &temp_sensor) != ESP_OK) {
-            return NAN;
-        }
-        temperature_sensor_enable(temp_sensor);
+    float temp = temperatureRead();
+    if (temp <= 0.0f || temp > 120.0f) {
+        return NAN;
     }
-    float tsens_out = 0.0;
-    if (temperature_sensor_get_celsius(temp_sensor, &tsens_out) == ESP_OK) {
-        return tsens_out;
-    }
-    return NAN;
-#else
-    return NAN;
-#endif
+    return temp;
 }
 
 String ESP32_Easy_Class::getUptime() {
@@ -126,7 +109,7 @@ String ESP32_Easy_Class::getUptime() {
 }
 
 void ESP32_Easy_Class::deepSleep(uint32_t seconds) {
-    Serial.printf("💤 Entering deep sleep for %u seconds...\n", seconds);
+    Serial.printf("💤 Entering deep sleep for %lu seconds...\n", (unsigned long)seconds);
     Serial.flush();
     esp_sleep_enable_timer_wakeup((uint64_t)seconds * 1000000ULL);
     esp_deep_sleep_start();
@@ -141,12 +124,12 @@ void ESP32_Easy_Class::printChipInfo() {
 
     Serial.println(" Hardware Diagnostics:");
     Serial.printf("  - Chip Model:       %s (Rev %d)\n", getChipModel().c_str(), chip_info.revision);
-    Serial.printf("  - CPU Cores:        %d core(s)\n", chip_info.cores);
-    Serial.printf("  - CPU Frequency:    %d MHz\n", getCpuFrequencyMhz());
-    Serial.printf("  - Flash Memory:     %u MB\n", getFlashSizeMB());
-    Serial.printf("  - PSRAM:            %s (%u MB total, %u bytes free)\n", 
-                  hasPSRAM() ? "Detected ✅" : "Not Present ❌", getPSRAMSizeMB(), getFreePSRAM());
-    Serial.printf("  - Free Heap:        %u bytes\n", getFreeHeap());
+    Serial.printf("  - CPU Cores:        %d core(s)\n", (int)chip_info.cores);
+    Serial.printf("  - CPU Frequency:    %lu MHz\n", (unsigned long)getCpuFrequencyMhz());
+    Serial.printf("  - Flash Memory:     %lu MB\n", (unsigned long)getFlashSizeMB());
+    Serial.printf("  - PSRAM:            %s (%lu MB total, %lu bytes free)\n", 
+                  hasPSRAM() ? "Detected ✅" : "Not Present ❌", (unsigned long)getPSRAMSizeMB(), (unsigned long)getFreePSRAM());
+    Serial.printf("  - Free Heap:        %lu bytes\n", (unsigned long)getFreeHeap());
     Serial.printf("  - MAC Address:      %02X:%02X:%02X:%02X:%02X:%02X\n", 
                   mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
     

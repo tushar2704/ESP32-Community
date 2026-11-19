@@ -52,6 +52,21 @@
   - [`projects/games/01-pong/`](../projects/games/01-pong/)
   - [`projects/games/02-snake/`](../projects/games/02-snake/)
 
+### 8. Smart Home Automation Suite (Garage Door, Energy Monitor & WS2812B)
+- **Hardware**: ESP32 + Relays + SCT-013 AC Current Clamp + WS2812B NeoPixel Strip.
+- **Features**: Animated web dashboard roll-up garage door with magnetic reed tracking, non-invasive True RMS power & kWh consumption metering, and multi-mode 16.7M color NeoPixel controller.
+- **Project Links**:
+  - [`projects/smart-home/03-garage-door/`](../projects/smart-home/03-garage-door/)
+  - [`projects/smart-home/07-energy-monitor/`](../projects/smart-home/07-energy-monitor/)
+  - [`projects/smart-home/09-led-strip-controller/`](../projects/smart-home/09-led-strip-controller/)
+
+### 9. ESP32-S3 Native USB HID Macro Pad & Pocket WiFi Signal Mapper
+- **Hardware**: ESP32-S3 native USB-OTG + EC11 rotary encoder + mechanical hotkeys + SSD1306 OLED.
+- **Features**: Driverless hardware USB media control with push-to-mute and dev hotkeys; real-time 2.4GHz spectrum crowding analyzer with acoustic Geiger signal locator.
+- **Project Links**:
+  - [`projects/advanced/08-usb-hid/`](../projects/advanced/08-usb-hid/)
+  - [`projects/beginner/11-wifi-signal-mapper/`](../projects/beginner/11-wifi-signal-mapper/)
+
 ---
 
 ## 🎨 Submit Your Build to the Showcase

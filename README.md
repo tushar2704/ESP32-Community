@@ -256,6 +256,7 @@ projects/<category>/<project-name>/
 | 8 | **Debounced Button** | Multi-action tactile input (Single, Double, Long Press) | ⭐ | ✅ Ready | [Open](projects/beginner/08-button-led/) |
 | 9 | **Deep Sleep Timer** | Ultra-low power RTC timer wakeup for battery systems | ⭐⭐ | ✅ Ready | [Open](projects/beginner/09-deep-sleep-timer/) |
 | 10 | **Serial JSON API** | Bidirectional JSON-RPC command protocol over USB | ⭐⭐ | ✅ Ready | [Open](projects/beginner/10-serial-json-api/) |
+| 11 | **WiFi Signal Mapper** | Real-time 2.4GHz spectrum analyzer, channel crowding graph & Geiger tracker | ⭐⭐ | ✅ Ready | [Open](projects/beginner/11-wifi-signal-mapper/) |
 | 15 | **OTA Update Basic** | Over-the-air wireless firmware update via ArduinoOTA | ⭐⭐ | ✅ Ready | [Open](projects/beginner/15-ota-update-basic/) |
 
 ---
@@ -306,9 +307,9 @@ projects/<category>/<project-name>/
 | 4 | **Custom Bootloader** | Write a custom second-stage bootloader | ⭐⭐⭐⭐⭐ | [Open](projects/advanced/04-custom-bootloader/) |
 | 5 | **TinyML Image Classifier** | On-device image classification with TensorFlow Lite Micro | ⭐⭐⭐⭐⭐ | [Open](projects/advanced/05-tinyml-classifier/) |
 | 6 | **OpenThread Border Router** | Build a Thread border router with ESP32-C6/H2 | ⭐⭐⭐⭐⭐ | [Open](projects/advanced/06-thread-border-router/) |
-| 7 | **Matter Smart Light** | Build a Matter-compliant smart light (certified-ready) | ⭐⭐⭐⭐⭐ | [Open](projects/advanced/07-matter-smart-light/) |
-| 8 | **Custom USB HID** | ESP32-S3 as a custom USB keyboard/mouse/gamepad | ⭐⭐⭐⭐ | [Open](projects/advanced/08-usb-hid/) |
-| 9 | **Audio DSP Pipeline** | Real-time audio processing with I2S, filters, FFT | ⭐⭐⭐⭐⭐ | [Open](projects/advanced/09-audio-dsp/) |
+| 7 | **Matter Smart Light** | Build a Matter-compliant smart light (certified-ready) | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/advanced/07-matter-smart-light/) |
+| 8 | **Custom USB HID** | ESP32-S3 rotary volume knob, media controls & dev macro pad | ⭐⭐⭐⭐ | ✅ Ready | [Open](projects/advanced/08-usb-hid/) |
+| 9 | **Audio DSP Pipeline** | Real-time audio processing with I2S, filters, FFT | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/advanced/09-audio-dsp/) |
 | 10 | **Dual-Core FreeRTOS** | Advanced multi-core programming with FreeRTOS | ⭐⭐⭐⭐ | [Open](projects/advanced/10-dual-core-freertos/) |
 | 11 | **Custom WiFi Stack** | Low-level WiFi frame injection and monitoring | ⭐⭐⭐⭐⭐ | [Open](projects/advanced/11-custom-wifi-stack/) |
 | 12 | **Secure OTA Server** | End-to-end encrypted OTA with signed firmware | ⭐⭐⭐⭐⭐ | [Open](projects/advanced/12-secure-ota-server/) |
@@ -381,17 +382,17 @@ projects/<category>/<project-name>/
 
 > *Turn your home into a smart home. Home Assistant, ESPHome, MQTT, and Matter-compatible builds.*
 
-| # | Project | Description | Difficulty | Link |
-|:-:|:--------|:------------|:----------:|:----:|
-| 1 | **ESPHome Basics** | Your first ESPHome device — sensor + relay | ⭐⭐ | [Open](projects/smart-home/01-esphome-basics/) |
-| 2 | **Smart Thermostat** | PID-controlled thermostat with scheduling | ⭐⭐⭐ | [Open](projects/smart-home/02-smart-thermostat/) |
-| 3 | **Garage Door Controller** | WiFi garage door opener with status monitoring | ⭐⭐⭐ | [Open](projects/smart-home/03-garage-door/) |
-| 4 | **Smart Blinds** | Motorized window blind controller with scheduling | ⭐⭐⭐ | [Open](projects/smart-home/04-smart-blinds/) |
-| 5 | **Presence Detection** | BLE + PIR room-level presence detection system | ⭐⭐⭐ | [Open](projects/smart-home/05-presence-detection/) |
-| 6 | **Smart Irrigation** | Multi-zone sprinkler controller with weather API | ⭐⭐⭐⭐ | [Open](projects/smart-home/06-smart-irrigation/) |
-| 7 | **Energy Monitor** | Whole-home energy monitoring with CT clamps | ⭐⭐⭐⭐ | [Open](projects/smart-home/07-energy-monitor/) |
-| 8 | **Smart Lock** | RFID + keypad + BLE electronic door lock | ⭐⭐⭐⭐ | [Open](projects/smart-home/08-smart-lock/) |
-| 9 | **LED Strip Controller** | WLED-compatible addressable LED strip controller | ⭐⭐ | [Open](projects/smart-home/09-led-strip-controller/) |
+| # | Project | Description | Difficulty | Status | Link |
+|:-:|:--------|:------------|:----------:|:------:|:----:|
+| 1 | **ESPHome Basics** | Your first ESPHome device — sensor + relay | ⭐⭐ | 📋 Planned | [Open](projects/smart-home/01-esphome-basics/) |
+| 2 | **Smart Thermostat** | PID-controlled thermostat with scheduling | ⭐⭐⭐ | 📋 Planned | [Open](projects/smart-home/02-smart-thermostat/) |
+| 3 | **Garage Door Controller** | WiFi garage door opener with reed sensor, auto-close safety & web dashboard | ⭐⭐⭐ | ✅ Ready | [Open](projects/smart-home/03-garage-door/) |
+| 4 | **Smart Blinds** | Motorized window blind controller with scheduling | ⭐⭐⭐ | 📋 Planned | [Open](projects/smart-home/04-smart-blinds/) |
+| 5 | **Presence Detection** | BLE + PIR room-level presence detection system | ⭐⭐⭐ | 📋 Planned | [Open](projects/smart-home/05-presence-detection/) |
+| 6 | **Smart Irrigation** | Multi-zone sprinkler controller with weather API | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/smart-home/06-smart-irrigation/) |
+| 7 | **Energy Monitor** | SCT-013 non-invasive true RMS AC power & kWh monitor with live web gauge | ⭐⭐⭐⭐ | ✅ Ready | [Open](projects/smart-home/07-energy-monitor/) |
+| 8 | **Smart Lock** | RFID + keypad + BLE electronic door lock | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/smart-home/08-smart-lock/) |
+| 9 | **LED Strip Controller** | Addressable WS2812B web controller with color picker & 8 dynamic animations | ⭐⭐ | ✅ Ready | [Open](projects/smart-home/09-led-strip-controller/) |
 | 10 | **Air Purifier Controller** | Smart air purifier with PM2.5 auto-triggering | ⭐⭐⭐ | [Open](projects/smart-home/10-air-purifier/) |
 | 11 | **Smart Mailbox** | Mailbox notification system with camera | ⭐⭐⭐ | [Open](projects/smart-home/11-smart-mailbox/) |
 | 12 | **Multi-Room Audio** | Snapcast-based synchronized multi-room audio | ⭐⭐⭐⭐ | [Open](projects/smart-home/12-multi-room-audio/) |
