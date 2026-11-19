@@ -31,12 +31,19 @@ typedef struct __attribute__((packed)) {
 MeshPacket tx_packet;
 MeshPacket rx_packet;
 
-// Hardware Transmission Callback
+// Hardware Transmission Callback (Compatible with Arduino Core v2 and v3)
+#if defined(ESP_ARDUINO_VERSION_MAJOR) && (ESP_ARDUINO_VERSION_MAJOR >= 3)
+void onDataSent(const wifi_tx_info_t *tx_info, esp_now_send_status_t status) {
+    Serial.printf("📤 [TX] Packet Transmission Completed — Status: %s\n",
+                  status == ESP_NOW_SEND_SUCCESS ? "SUCCESS (ACK Received) ✅" : "FAILED (No ACK) ❌");
+}
+#else
 void onDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
     Serial.printf("📤 [TX] Packet sent to %02X:%02X:%02X:%02X:%02X:%02X — Delivery Status: %s\n",
                   mac_addr[0], mac_addr[1], mac_addr[2], mac_addr[3], mac_addr[4], mac_addr[5],
                   status == ESP_NOW_SEND_SUCCESS ? "SUCCESS (ACK Received) ✅" : "FAILED (No ACK) ❌");
 }
+#endif
 
 // Hardware Reception Callback (Compatible with Arduino Core v2 and v3)
 #if defined(ESP_ARDUINO_VERSION_MAJOR) && (ESP_ARDUINO_VERSION_MAJOR >= 3)

@@ -35,7 +35,11 @@ class MyAdvertisedDeviceCallbacks : public BLEAdvertisedDeviceCallbacks {
 
     // Check Manufacturer Data for Apple (0x004C)
     if (advertisedDevice.haveManufacturerData()) {
+#if defined(ESP_ARDUINO_VERSION_MAJOR) && (ESP_ARDUINO_VERSION_MAJOR >= 3)
+      String mData = advertisedDevice.getManufacturerData();
+#else
       std::string mData = advertisedDevice.getManufacturerData();
+#endif
       if (mData.length() >= 2) {
         uint16_t companyId = (uint8_t)mData[0] | ((uint8_t)mData[1] << 8);
         if (companyId == 0x004C) { // Apple Inc.
@@ -81,11 +85,17 @@ void setup() {
 }
 
 void loop() {
+#if defined(ESP_ARDUINO_VERSION_MAJOR) && (ESP_ARDUINO_VERSION_MAJOR >= 3)
+  BLEScanResults *foundDevices = pBLEScan->start(SCAN_TIME_SECONDS, false);
+  int count = foundDevices ? foundDevices->getCount() : 0;
+#else
   BLEScanResults foundDevices = pBLEScan->start(SCAN_TIME_SECONDS, false);
+  int count = foundDevices.getCount();
+#endif
   
   Serial.println("--------------------------------------------------");
   Serial.printf("[SCAN CYCLE COMPLETE] Devices Found: %d | Apple/FindMy: %lu | Total Ever: %lu\n",
-                foundDevices.getCount(), appleDevices, totalDiscovered);
+                count, appleDevices, totalDiscovered);
   Serial.println("--------------------------------------------------\n");
 
   pBLEScan->clearResults(); // Clear buffer to prevent memory leakage

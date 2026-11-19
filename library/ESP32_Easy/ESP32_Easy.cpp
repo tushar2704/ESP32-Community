@@ -202,9 +202,9 @@ int ESP32_Easy_Class::scanNetworks() {
         Serial.printf("  [%2d] %-24s | RSSI: %3d dBm %-5s | Ch: %2d | %s\n",
                       i + 1,
                       WiFi.SSID(i).substring(0, 24).c_str(),
-                      WiFi.RSSI(i),
+                      (int)WiFi.RSSI(i),
                       _rssiToBars(WiFi.RSSI(i)).c_str(),
-                      WiFi.channel(i),
+                      (int)WiFi.channel(i),
                       (WiFi.encryptionType(i) == WIFI_AUTH_OPEN) ? "Open 🔓" : "Secured 🔒");
         delay(10);
     }

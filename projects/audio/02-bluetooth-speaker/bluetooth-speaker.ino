@@ -9,6 +9,7 @@
  */
 
 #include <Arduino.h>
+#include <driver/i2s.h>
 #include "BluetoothA2DPSink.h"
 
 #ifndef LED_BUILTIN

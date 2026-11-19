@@ -41,11 +41,19 @@ void setup() {
     BLEAdvertisementData oScanResponseData = BLEAdvertisementData();
 
     oAdvertisementData.setFlags(0x04); // BR_EDR_NOT_SUPPORTED
+#if defined(ESP_ARDUINO_VERSION_MAJOR) && (ESP_ARDUINO_VERSION_MAJOR >= 3)
+    String strServiceData = "";
+    strServiceData += (char)26;     // Length
+    strServiceData += (char)0xFF;   // Type: Manufacturer Specific
+    strServiceData += oBeacon.getData(); 
+    oAdvertisementData.addData(strServiceData);
+#else
     std::string strServiceData = "";
     strServiceData += (char)26;     // Length
     strServiceData += (char)0xFF;   // Type: Manufacturer Specific
     strServiceData += oBeacon.getData(); 
     oAdvertisementData.addData(strServiceData);
+#endif
 
     oScanResponseData.setName(DEVICE_NAME);
 
