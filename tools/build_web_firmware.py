@@ -126,6 +126,42 @@ PROJECTS = [
         "envs": [
             {"env": "esp32cam", "chip": "ESP32", "boot_offset": 4096}
         ]
+    },
+    {
+        "slug": "tetris",
+        "name": "Retro 60 FPS OLED Arcade Tetris",
+        "category": "Games",
+        "dir": "projects/games/03-tetris",
+        "envs": [
+            {"env": "esp32dev", "chip": "ESP32", "boot_offset": 4096}
+        ]
+    },
+    {
+        "slug": "simon-says",
+        "name": "Hardware Simon Says Memory Game",
+        "category": "Games",
+        "dir": "projects/games/09-simon-says",
+        "envs": [
+            {"env": "esp32dev", "chip": "ESP32", "boot_offset": 4096}
+        ]
+    },
+    {
+        "slug": "water-leak-detector",
+        "name": "Smart Home Water Leak & Shutoff Guard",
+        "category": "Smart Home",
+        "dir": "projects/smart-home/13-water-leak-detector",
+        "envs": [
+            {"env": "esp32dev", "chip": "ESP32", "boot_offset": 4096}
+        ]
+    },
+    {
+        "slug": "smart-plant-watering",
+        "name": "Automated Soil Moisture Plant Irrigator",
+        "category": "Smart Home",
+        "dir": "projects/intermediate/14-smart-plant-watering",
+        "envs": [
+            {"env": "esp32dev", "chip": "ESP32", "boot_offset": 4096}
+        ]
     }
 ]
 

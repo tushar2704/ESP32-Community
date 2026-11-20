@@ -88,6 +88,30 @@
   - [`projects/esp32-cam/04-time-lapse/`](../projects/esp32-cam/04-time-lapse/)
   - [`projects/smart-home/01-esphome-basics/`](../projects/smart-home/01-esphome-basics/)
 
+### 13. Industrial RS485 Modbus RTU Web & MQTT Gateway
+- **Hardware**: ESP32 + MAX485 transceiver module + 120Ω bus terminator + Modbus slave device.
+- **Features**: Hardware CRC-16 calculation, half-duplex UART driver, live browser gauge telemetry, and periodic MQTT publishing.
+- **Project Link**: [`projects/industrial/01-modbus-gateway/`](../projects/industrial/01-modbus-gateway/)
+
+### 14. 60 FPS Retro OLED Tetris & Simon Says Arcade Suite
+- **Hardware**: ESP32 + SSD1306 OLED + tactile buttons + 4-color LEDs + piezo buzzer.
+- **Features**: Authentic 60 FPS Tetris engine with 7 tetrominoes, rotation, drop acceleration, and flash high scores; 4-button musical memory game with frequency tone synthesis.
+- **Project Links**:
+  - [`projects/games/03-tetris/`](../projects/games/03-tetris/)
+  - [`projects/games/09-simon-says/`](../projects/games/09-simon-says/)
+
+### 15. Real-Time Digital ESP-NOW Walkie-Talkie
+- **Hardware**: 2x ESP32 boards + INMP441 I2S MEMS mic + MAX98357A I2S DAC amp + PTT switch.
+- **Features**: Sub-15ms push-to-talk voice streaming over raw 2.4 GHz ESP-NOW frames with zero router infrastructure.
+- **Project Link**: [`projects/audio/06-walkie-talkie/`](../projects/audio/06-walkie-talkie/)
+
+### 16. Autonomous Ultrasonic Radar Rover & Wi-Fi Probe Analyzer
+- **Hardware**: ESP32 + HC-SR04 ultrasonic sensor + SG90 panning servo + L298N H-Bridge; standalone ESP32 sniffer.
+- **Features**: 180° obstacle avoidance radar sweep with escape trajectory selection; 802.11 promiscuous sniffer evaluating mobile Wi-Fi privacy.
+- **Project Links**:
+  - [`projects/robotics/03-obstacle-avoider/`](../projects/robotics/03-obstacle-avoider/)
+  - [`projects/security/04-probe-analyzer/`](../projects/security/04-probe-analyzer/)
+
 ---
 
 ## 🎮 Interactive Wokwi Browser Simulations
@@ -96,6 +120,10 @@ No hardware on hand? You can simulate select community projects directly in your
 - **Hello ESP32**: [Simulate in Wokwi](https://wokwi.com/) with serial console and status LED.
 - **Blink RGB**: [Simulate in Wokwi](https://wokwi.com/) with multi-channel LEDC smooth color cycling.
 - **Retro Pong**: [Simulate in Wokwi](https://wokwi.com/) with dual-button controls and 60 FPS SSD1306 OLED display.
+- **Nokia Snake**: [Simulate in Wokwi](https://wokwi.com/) with direction controls, OLED graphics, and buzzer.
+- **Tetris Arcade**: [Simulate in Wokwi](https://wokwi.com/) with 4 control buttons and full 60 FPS game engine.
+- **Simon Says**: [Simulate in Wokwi](https://wokwi.com/) with 4 colored pushbuttons, matching LEDs, and buzzer tones.
+- **Pomodoro Timer**: [Simulate in Wokwi](https://wokwi.com/) with countdown timer and start/pause button.
 
 Each simulated project includes `diagram.json` and `wokwi.toml` pre-configured in its project folder.
 

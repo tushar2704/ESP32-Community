@@ -279,10 +279,19 @@
 
       <div class="terminal-container">
         <div class="terminal-header">
-          <span>📟 Web Serial Monitor (115200 Baud)</span>
-          <button class="btn-serial" id="serial-btn" onclick="toggleSerial()">Connect Serial Console</button>
+          <span>📟 Web Serial Monitor</span>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <select id="baud-select" style="padding:4px 8px; font-size:12px; width:auto; background:#1e293b; border:1px solid #334155; border-radius:6px; color:#f8fafc;">
+              <option value="115200" selected>115200 Baud</option>
+              <option value="9600">9600 Baud</option>
+              <option value="74880">74880 Baud</option>
+              <option value="230400">230400 Baud</option>
+            </select>
+            <button class="btn-serial" id="serial-btn" onclick="toggleSerial()">Connect Serial</button>
+            <button class="btn-serial" style="background:#475569;" onclick="clearSerial()">Clear</button>
+          </div>
         </div>
-        <pre id="serial-output">Click 'Connect Serial Console' to inspect live device logs...</pre>
+        <pre id="serial-output">Click 'Connect Serial' to inspect live device logs...</pre>
       </div>
 
       <div class="info-box">
@@ -391,12 +400,44 @@
         pins: ["Relay Pulse: GPIO 26", "Reed Switch: GPIO 27", "Buzzer: GPIO 25"]
       },
       {
-        manifest: "manifest-security-camera.json",
-        name: "CAM-01. ESP32-CAM MJPEG Video Streamer",
-        category: "Camera",
-        board: "ESP32-CAM",
-        desc: "High-framerate video surveillance camera streaming live MJPEG over Wi-Fi with resolution switcher.",
-        pins: ["Sensor: OV2640 2MP", "Flash LED: GPIO 4"]
+        "manifest": "manifest-security-camera.json",
+        "name": "CAM-01. ESP32-CAM MJPEG Video Streamer",
+        "category": "Camera",
+        "board": "ESP32-CAM",
+        "desc": "High-framerate video surveillance camera streaming live MJPEG over Wi-Fi with resolution switcher.",
+        "pins": ["Sensor: OV2640 2MP", "Flash LED: GPIO 4"]
+      },
+      {
+        "manifest": "manifest-tetris.json",
+        "name": "03. 60 FPS Retro OLED Arcade Tetris",
+        "category": "Games",
+        "board": "ESP32",
+        "desc": "Full 60 FPS Tetris arcade engine on SSD1306 OLED with rotation, ghost piece, drop speed acceleration, piezo audio, and flash NVS high scores.",
+        "pins": ["OLED SDA: GPIO 21", "OLED SCL: GPIO 22", "Buttons: GPIO 18/19/23/5", "Buzzer: GPIO 25"]
+      },
+      {
+        "manifest": "manifest-simon-says.json",
+        "name": "09. Hardware Simon Says Memory Game",
+        "category": "Games",
+        "board": "ESP32",
+        "desc": "Classic 4-color memory puzzle with musical tone synthesis, variable playback speed, timeout handling, and NVS high-score leaderboard.",
+        "pins": ["Buttons: GPIO 18/19/23/5", "LEDs: GPIO 16/17/21/22", "Buzzer: GPIO 25"]
+      },
+      {
+        "manifest": "manifest-water-leak-detector.json",
+        "name": "13. Water Leak Detector & Auto Shutoff Guard",
+        "category": "Smart Home",
+        "board": "ESP32 / S3 / C3",
+        "desc": "Multi-zone water leak sensing with emergency solenoid cutoff, acoustic buzzer alarm, and real-time Web dashboard status.",
+        "pins": ["Zone 1: GPIO 34", "Zone 2: GPIO 35", "Solenoid Relay: GPIO 26", "Alarm Buzzer: GPIO 25"]
+      },
+      {
+        "manifest": "manifest-smart-plant-watering.json",
+        "name": "14. Smart Plant Watering & Moisture Monitor",
+        "category": "Smart Home",
+        "board": "ESP32 / S3 / C3",
+        "desc": "Capacitive soil moisture sensing v1.2 with automated submersible pump relay actuation, dry-run safety lockouts, and web telemetry.",
+        "pins": ["Moisture Sensor: GPIO 34", "Water Pump Relay: GPIO 26", "Status LED: GPIO 2"]
       }
     ];
 
@@ -461,7 +502,7 @@
         if (reader) await reader.cancel();
         await port.close();
         port = null;
-        btn.innerText = 'Connect Serial Console';
+        btn.innerText = 'Connect Serial';
         output.textContent += '\n[Disconnected from Serial Port]\n';
         return;
       }
@@ -472,10 +513,11 @@
       }
 
       try {
+        const selectedBaud = parseInt(document.getElementById('baud-select').value) || 115200;
         port = await navigator.serial.requestPort();
-        await port.open({ baudRate: 115200 });
-        btn.innerText = 'Disconnect Console';
-        output.textContent = '[Connected at 115200 baud]\n';
+        await port.open({ baudRate: selectedBaud });
+        btn.innerText = 'Disconnect Serial';
+        output.textContent = `[Connected at ${selectedBaud} baud]\n`;
         keepReading = true;
 
         const decoder = new TextDecoderStream();
@@ -493,6 +535,10 @@
       } catch (err) {
         output.textContent += `\nError: ${err.message}\n`;
       }
+    }
+
+    function clearSerial() {
+      document.getElementById('serial-output').textContent = '';
     }
 
     // Initialize catalog

@@ -84,7 +84,7 @@
 > [!TIP]
 > **No Arduino IDE. No PlatformIO. No drivers. Just click and flash.**
 >
-> Our browser-based Web Flasher lets you program your ESP32 directly from Chrome/Edge — no software installation needed. Connect your board via USB, pick from our curated collection of 12 flagship firmwares, inspect wiring schematics, and hit **Install**. Monitor runtime logs live with the integrated **Web Serial Monitor** directly in your browser.
+> Our browser-based Web Flasher lets you program your ESP32 directly from Chrome/Edge — no software installation needed. Connect your board via USB, pick from our curated collection of 16 flagship firmwares, inspect wiring schematics, and hit **Install**. Monitor runtime logs live with the integrated **Web Serial Monitor** directly in your browser.
 >
 > ### **👉 [Launch Web Flasher](https://tushar2704.github.io/ESP32-Community/) 👈**
 >
@@ -95,6 +95,10 @@ Want to test without plugging in hardware? Simulate select projects directly in 
 - 🟢 **[Hello ESP32](projects/beginner/01-hello-esp32/)** — Serial logging & LED blinking
 - 🌈 **[Blink RGB](projects/beginner/03-blink-rgb/)** — Multi-channel LEDC PWM color cycling
 - 🏓 **[Retro Pong](projects/games/01-pong/)** — 60 FPS SSD1306 OLED game with paddle buttons
+- 🐍 **[Nokia Snake](projects/games/02-snake/)** — OLED Snake with direction controls & NVS score
+- 🕹️ **[Tetris Arcade](projects/games/03-tetris/)** — 60 FPS complete Tetris on OLED with 4 control buttons
+- 🧠 **[Simon Says](projects/games/09-simon-says/)** — 4-color LED & musical tone memory game
+- ⏱️ **[Pomodoro Timer](projects/intermediate/16-pomodoro-timer/)** — Productivity countdown timer with OLED & buzzer
 
 ---
 
@@ -416,7 +420,7 @@ projects/<category>/<project-name>/
 |:-:|:--------|:------------|:----------:|:------:|:----:|
 | 1 | **WiFi Robot Car** | Standalone AP web-controlled D-Pad chassis with speed PWM | ⭐⭐⭐ | ✅ Ready | [Open](projects/robotics/01-wifi-robot-car/) |
 | 2 | **PID Line Follower** | 5-channel TCRT5000 optical array with 200Hz PID loop | ⭐⭐⭐ | ✅ Ready | [Open](projects/robotics/02-line-follower/) |
-| 3 | **Obstacle Avoider** | Ultrasonic + IR obstacle avoidance robot | ⭐⭐⭐ | 📋 Planned | [Open](projects/robotics/03-obstacle-avoider/) |
+| 3 | **Obstacle Avoider** | Servo-swept ultrasonic radar collision avoidance rover | ⭐⭐⭐ | ✅ Ready | [Open](projects/robotics/03-obstacle-avoider/) |
 | 4 | **4-DOF Robotic Arm** | Web slider interface with servo easing & pose memory | ⭐⭐⭐⭐ | ✅ Ready | [Open](projects/robotics/04-robotic-arm/) |
 | 5 | **Self-Balancing Robot** | Two-wheel self-balancing robot with PID + IMU | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/robotics/05-self-balancing/) |
 | 6 | **Hexapod Walker** | 18-servo hexapod walking robot | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/robotics/06-hexapod/) |
@@ -439,7 +443,7 @@ projects/<category>/<project-name>/
 | 1 | **WiFi Deauth Detector** | Promiscuous 802.11 monitor detecting 0xC0 & 0xA0 attacks | ⭐⭐⭐ | ✅ Ready | [Open](projects/security/01-wifi-deauth-detector/) |
 | 2 | **BLE Tracker Scanner** | Proximity locator for Apple AirTags, FindMy & iBeacons | ⭐⭐⭐ | ✅ Ready | [Open](projects/security/02-ble-scanner/) |
 | 3 | **WiGLE Wardriver** | Continuous 2.4GHz survey logger exporting WiGLE CSV | ⭐⭐⭐ | ✅ Ready | [Open](projects/security/03-wardriver/) |
-| 4 | **WiFi Probe Analyzer** | Analyze WiFi probe requests for device tracking awareness | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/security/04-probe-analyzer/) |
+| 4 | **WiFi Probe Analyzer** | Promiscuous 802.11 sniffer & privacy monitor with live web telemetry | ⭐⭐⭐⭐ | ✅ Ready | [Open](projects/security/04-probe-analyzer/) |
 | 5 | **Rogue AP Detector** | Detect rogue/evil twin access points | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/security/05-rogue-ap-detector/) |
 | 6 | **RFID Cloner** | RFID card read/write/emulate (Mifare Classic) | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/security/06-rfid-cloner/) |
 | 7 | **Hardware Keylogger** | USB HID keylogger for security auditing | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/security/07-keylogger/) |
@@ -460,7 +464,7 @@ projects/<category>/<project-name>/
 | 3 | **MP3 Player** | SD card MP3 player with I2S DAC output | ⭐⭐⭐ | 📋 Planned | [Open](projects/audio/03-mp3-player/) |
 | 4 | **Voice Recorder** | Record audio to SD card with I2S MEMS microphone | ⭐⭐⭐ | 📋 Planned | [Open](projects/audio/04-voice-recorder/) |
 | 5 | **Audio Spectrum Analyzer** | Real-time FFT audio spectrum visualizer | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/audio/05-spectrum-analyzer/) |
-| 6 | **Walkie-Talkie** | Two-way audio communication over ESP-NOW/WiFi | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/audio/06-walkie-talkie/) |
+| 6 | **Walkie-Talkie** | Real-time digital push-to-talk voice over raw ESP-NOW frames | ⭐⭐⭐⭐ | ✅ Ready | [Open](projects/audio/06-walkie-talkie/) |
 | 7 | **Synthesizer** | Digital audio synthesizer with waveform generation | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/audio/07-synthesizer/) |
 | 8 | **Guitar Effects Pedal** | Real-time guitar effects processor (distortion, delay, reverb) | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/audio/08-guitar-effects/) |
 | 9 | **Text-to-Speech** | Offline TTS engine running on ESP32 | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/audio/09-text-to-speech/) |
@@ -476,15 +480,14 @@ projects/<category>/<project-name>/
 |:-:|:--------|:------------|:----------:|:------:|:----:|
 | 1 | **Pong** | 60 FPS 2D Pong on SSD1306 OLED with AI opponent & buzzer | ⭐⭐ | ✅ Ready | [Open](projects/games/01-pong/) |
 | 2 | **Snake** | Nokia-style Snake on OLED with NVS flash persistent high score | ⭐⭐ | ✅ Ready | [Open](projects/games/02-snake/) |
-| 2 | **Snake** | Classic Snake game with high score tracking | ⭐⭐ | [Open](projects/games/02-snake/) |
-| 3 | **Tetris** | Full Tetris implementation with rotation, scoring | ⭐⭐⭐ | [Open](projects/games/03-tetris/) |
-| 4 | **Flappy Bird** | Flappy Bird clone on TFT display | ⭐⭐⭐ | [Open](projects/games/04-flappy-bird/) |
-| 5 | **Game Boy Emulator** | Nintendo Game Boy emulator on ESP32-S3 | ⭐⭐⭐⭐⭐ | [Open](projects/games/05-gameboy-emulator/) |
-| 6 | **NES Emulator** | Nintendo NES emulator with HDMI output | ⭐⭐⭐⭐⭐ | [Open](projects/games/06-nes-emulator/) |
-| 7 | **Multiplayer WiFi Game** | Real-time multiplayer game over WiFi/ESP-NOW | ⭐⭐⭐⭐ | [Open](projects/games/07-multiplayer-game/) |
-| 8 | **Handheld Console** | Custom handheld gaming console with 3D-printed case | ⭐⭐⭐⭐ | [Open](projects/games/08-handheld-console/) |
-| 9 | **Simon Says** | Simon Says memory game with LED + buzzer | ⭐⭐ | [Open](projects/games/09-simon-says/) |
-| 10 | **Doom Port** | Doom (1993) ported to ESP32-S3 with display | ⭐⭐⭐⭐⭐ | [Open](projects/games/10-doom-port/) |
+| 3 | **Tetris** | 60 FPS arcade Tetris on OLED with rotation, ghost piece & buzzer SFX | ⭐⭐⭐ | ✅ Ready | [Open](projects/games/03-tetris/) |
+| 4 | **Flappy Bird** | Flappy Bird clone on TFT display | ⭐⭐⭐ | 📋 Planned | [Open](projects/games/04-flappy-bird/) |
+| 5 | **Game Boy Emulator** | Nintendo Game Boy emulator on ESP32-S3 | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/games/05-gameboy-emulator/) |
+| 6 | **NES Emulator** | Nintendo NES emulator with HDMI output | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/games/06-nes-emulator/) |
+| 7 | **Multiplayer WiFi Game** | Real-time multiplayer game over WiFi/ESP-NOW | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/games/07-multiplayer-game/) |
+| 8 | **Handheld Console** | Custom handheld gaming console with 3D-printed case | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/games/08-handheld-console/) |
+| 9 | **Simon Says** | 4-color LED & tactile memory game with frequency tones & NVS high score | ⭐⭐ | ✅ Ready | [Open](projects/games/09-simon-says/) |
+| 10 | **Doom Port** | Doom (1993) ported to ESP32-S3 with display | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/games/10-doom-port/) |
 
 ---
 
@@ -492,9 +495,18 @@ projects/<category>/<project-name>/
 
 > *Production-grade industrial IoT solutions — Modbus, SCADA, predictive maintenance, and factory automation.*
 
-| # | Project | Description | Difficulty | Link |
-|:-:|:--------|:------------|:----------:|:----:|
-| 1 | **Modbus Gateway** | RS485 Modbus RTU to WiFi/MQTT gateway | ⭐⭐⭐⭐ | [Open](projects/industrial/01-modbus-gateway/) |
+| # | Project | Description | Difficulty | Status | Link |
+|:-:|:--------|:------------|:----------:|:------:|:----:|
+| 1 | **Modbus Gateway** | RS485 Modbus RTU to Web & MQTT gateway with hardware CRC-16 | ⭐⭐⭐⭐ | ✅ Ready | [Open](projects/industrial/01-modbus-gateway/) |
+| 2 | **PLC Replacement** | ESP32 as a simple PLC with ladder logic | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/industrial/02-plc-replacement/) |
+| 3 | **Predictive Maintenance** | Vibration analysis for predictive machine maintenance | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/industrial/03-predictive-maintenance/) |
+| 4 | **SCADA Interface** | SCADA HMI dashboard with Modbus connectivity | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/industrial/04-scada-interface/) |
+| 5 | **Environmental Monitor** | Industrial environmental monitoring (temp, humidity, pressure, gas) | ⭐⭐⭐ | 📋 Planned | [Open](projects/industrial/05-environmental-monitor/) |
+| 6 | **Asset Tracker** | GPS + LoRa industrial asset tracking system | ⭐⭐⭐⭐ | 📋 Planned | [Open](projects/industrial/06-asset-tracker/) |
+| 7 | **Motor Controller** | Variable frequency drive (VFD) interface and monitor | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/industrial/07-motor-controller/) |
+| 8 | **OPC UA Server** | OPC Unified Architecture server on ESP32 | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/industrial/08-opcua-server/) |
+| 9 | **Digital Signage** | Industrial digital signage with remote content management | ⭐⭐⭐ | 📋 Planned | [Open](projects/industrial/09-digital-signage/) |
+| 10 | **Data Acquisition** | Multi-channel high-speed DAQ system | ⭐⭐⭐⭐⭐ | 📋 Planned | [Open](projects/industrial/10-data-acquisition/) |
 | 2 | **PLC Replacement** | ESP32 as a simple PLC with ladder logic | ⭐⭐⭐⭐ | [Open](projects/industrial/02-plc-replacement/) |
 | 3 | **Predictive Maintenance** | Vibration analysis for predictive machine maintenance | ⭐⭐⭐⭐⭐ | [Open](projects/industrial/03-predictive-maintenance/) |
 | 4 | **SCADA Interface** | SCADA HMI dashboard with Modbus connectivity | ⭐⭐⭐⭐⭐ | [Open](projects/industrial/04-scada-interface/) |

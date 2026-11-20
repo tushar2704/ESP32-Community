@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "Tushar Aggarwal",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "board-ssd1306", "id": "oled", "top": -120, "left": 80, "attrs": { "i2cAddress": "0x3c" } },
+    { "type": "wokwi-pushbutton", "id": "btn_left", "top": 120, "left": -40, "attrs": { "color": "blue", "label": "LEFT" } },
+    { "type": "wokwi-pushbutton", "id": "btn_right", "top": 120, "left": 40, "attrs": { "color": "blue", "label": "RIGHT" } },
+    { "type": "wokwi-buzzer", "id": "bz", "top": -60, "left": -60, "attrs": { "volume": "0.1" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "oled:GND", "black", [ "v0" ] ],
+    [ "esp:3V3", "oled:VCC", "red", [ "v0" ] ],
+    [ "esp:22", "oled:SCL", "yellow", [ "v0" ] ],
+    [ "esp:21", "oled:SDA", "green", [ "v0" ] ],
+    [ "esp:18", "btn_left:2.1", "blue", [ "v0" ] ],
+    [ "esp:GND.2", "btn_left:1.1", "black", [ "v0" ] ],
+    [ "esp:19", "btn_right:2.1", "blue", [ "v0" ] ],
+    [ "esp:GND.2", "btn_right:1.1", "black", [ "v0" ] ],
+    [ "esp:23", "bz:2", "purple", [ "v0" ] ],
+    [ "esp:GND.1", "bz:1", "black", [ "v0" ] ]
+  ]
+}

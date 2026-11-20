@@ -16,7 +16,7 @@ class TestWebFlasherCompatibility(unittest.TestCase):
 
     def setUp(self):
         self.manifests = list(WEB_FLASHER_DIR.glob("manifest-*.json"))
-        self.assertTrue(len(self.manifests) >= 10, f"Expected at least 10 manifests, found {len(self.manifests)}")
+        self.assertTrue(len(self.manifests) >= 16, f"Expected at least 16 manifests, found {len(self.manifests)}")
 
     def test_manifests_valid_json(self):
         """Verify each manifest is valid JSON with required ESP Web Tools fields."""
